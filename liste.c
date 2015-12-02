@@ -3,86 +3,79 @@
 #include "TListe.h"
 
 
-/*CreÌerListe: â†’ TListeEntier â€“ â€“ retourne la liste vide : EstVide(CreÌerListe()) retourne true.*/
-/* TListe CreerListe()
+/*********************************************/
+/* Progamme de test du module TListe         */
+/* A vous de decommenter ligne par ligne     */
+/* au fur et Ã  mesure de votre avancement   */
+/* dans les fichiers TListe.h et TListe.c    */
+/*********************************************/
+
+int main (void)
 {
-*************************
-* A completer           *
-*************************
-}*/
+printf("Lancement du programme des tests du module liste \n");
+printf("\n");
+
+
+TListe l = CreerListe() ;
+
+if(EstVide(l))
+	printf("La liste nouvellement crée est bien vide \n");
+else
+	printf("La liste n'est pas vide\n");
+
+AfficheListe(l);
+
+l=AjoutDebut(l, 3);
+printf("Element 3 ajouté \n");
+AfficheListe(l);
+
+l=AjoutDebut(l, 5);
+printf("Element 5 ajouté \n");
+AfficheListe(l);
+
+
+l=AjoutDebut(l, 1);
+printf("Element 1 ajouté \n");
+AfficheListe(l);
+
+
+l=AjoutFin(l, 11);
+printf("Element 11 ajouté en fin de liste \n");
+AfficheListe(l);
+
+
+l=AjoutFin(l, 14);
+printf("Element 11 ajouté en fin de liste \n");
+AfficheListe(l);
+
+
+printf("Premier de la liste : %d\n",Premier(l));
+printf("Dernier de la liste : %d\n",Dernier(l));
+
+printf("Premier(Vide) va provoquer une erreur\n");
+printf("Premier de la liste : %d\n",Premier(CreerListe()));
 
 
 
-/* EstVide: TListeEntier â†’ bool â€“ â€“ retourne true si la liste est vide, false sinon. */
-/* int EstVide(TListe l)
-{
-*************************
-* A completer           *
-*************************
-}*/
 
+printf("Dernier(Vide) va provoquer une erreur\n");
+printf("Dernier de la liste : %d\n",Dernier(CreerListe()));
 
-/* AjoutDeÌbut: TListeEntier Ã— int â†’ TListeEntier */
-/* TListe AjoutDebut(TListe l, int val)
-{
-*************************
-* A completer           *
-*************************
-}*/
-
-
-/* AfficheListe(TListe l) ->  : Affiche le contenu de la liste */
-/* void AfficheListe(TListe l)
-{`
-*************************
-* A completer           *
-*************************
-}*/
-
-
-/* AjoutFin: TListeEntier Ã— int â†’ TListeEntier â€“ â€“ retourne la liste obtenue en ajoutant lâ€™entier donneÌe en fin de
-liste ; si la liste est vide, se comporte comme AjoutDeÌbut. */
-/* TListe AjoutFin(TListe l, int val)
-{
-*************************
-* A completer           *
-*************************
-}*/
-
-
-/* Premier: TListeEntier â†’ int â€“ â€“ retourne le premier eÌleÌment de la liste ; renvoie une erreur si la liste est vide. */
-/* int Premier(TListe l)
-{
-*************************
-* A completer           *
-*************************
-}*/
-
-
-/*Dernier: TListeEntier â†’ int â€“ â€“ retourne le dernier eÌleÌment de la liste ; renvoie une erreur si la liste est vide.*/
-/* int Dernier(TListe l)
-{
-*************************
-* A completer           *
-*************************
-}*/
-
-
-/* SupprimerTeÌ‚te: TListeEntier â†’ TListeEntier â€“ â€“ retourne la liste obtenue en ayant supprimeÌ le premier eÌleÌment
-de la liste ; Erreur si la liste est vide. */
-/* TListe SupprimerTete(TListe l)
-{
-*************************
-* A completer           *
-* penser a deallouer    *
-* l'espace memoire      *
-*************************
-}*/
-
+/*l=SupprimerTete(l);
+printf("Element de tete supprimé\n");
+AfficheListe(l);*/
 
 
 /**************************************************/
-/* A vous de completer pour les fonctions         */
+/* A vous de completer pour tester les fonctions  */
 /* SupprimerFin                                   */
 /* NbOccurence                                    */
 /**************************************************/
+
+
+
+
+
+
+   return 0;
+}

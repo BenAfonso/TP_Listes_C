@@ -25,6 +25,3 @@ TListe SupprimerTete(TListe l);
 /* SupprimerFin                                   */
 /* NbOccurence                                    */
 /**************************************************/
-
-
- 

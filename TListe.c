@@ -22,17 +22,14 @@ int EstVide(TListe l)
 TListe AjoutDebut(TListe l, int val)
 {
 	TListeEntier* nouvelElement = malloc(sizeof(TListeEntier));
-	if (!EstVide(l)){
-		nouvelElement->valeur = val;
+	nouvelElement->valeur = val;
+	nouvelElement->precedent = NULL;
+	if (EstVide(l)){
 		nouvelElement->suivant = NULL;
-		nouvelElement->precedent = nouvelElement;
-		
-		
 	}
 	else{
-		nouvelElement->valeur = val;
-		nouvelElement->suivant = NULL;
-		nouvelElement->precedent = NULL;
+		l->precedent = nouvelElement;
+		nouvelElement->suivant = l;
 	}
 	return nouvelElement;
 }
@@ -41,40 +38,81 @@ TListe AjoutDebut(TListe l, int val)
 /* AfficheListe(TListe l) ->  : Affiche le contenu de la liste */
 void AfficheListe(TListe l)
 {
-	if (!EstVide(l))
+	if (!(EstVide(l)))
 	{
-		printf("%d ->",l->valeur);
-		AfficheListe(l->suivant);
+		printf("%d",l->valeur);
+		if (!(EstVide(l->suivant)))
+		{
+				printf(" -> ");
+				AfficheListe(l->suivant);
+		}
+		else printf("\n");
 	}
+	else printf("La liste est vide\n");
+	return;
 }
 
 
 /* AjoutFin: TListeEntier Ã— int â†’ TListeEntier â€“ â€“ retourne la liste obtenue en ajoutant lâ€™entier donneÌe en fin de
 liste ; si la liste est vide, se comporte comme AjoutDeÌbut. */
-/* TListe AjoutFin(TListe l, int val)
+TListe AjoutFin(TListe l, int val)
 {
-*************************
-* A completer           *
-*************************
-}*/
+	  TListe tmp;
+	  if ((EstVide(l)))
+	  {
+	    return AjoutDebut(l,val);
+	  }
+	  else
+	  {
+	    tmp = l;
+	    while (!(EstVide(tmp->suivant)))
+	    {
+	      tmp = tmp->suivant;
+	    }
+	    TListe element = (TListeEntier *) malloc(sizeof(TListeEntier));
+	    element->valeur = val;
+	    element->precedent = tmp;
+	    element->suivant = NULL;
+	    tmp->suivant = element;
+	    return l ;
+	  }
+
+
+}
 
 
 /* Premier: TListeEntier â†’ int â€“ â€“ retourne le premier eÌleÌment de la liste ; renvoie une erreur si la liste est vide. */
-/* int Premier(TListe l)
+int Premier(TListe l)
 {
-*************************
-* A completer           *
-*************************
-}*/
+		if (EstVide(l))
+		{
+			printf("ERREUR: Liste vide.\n");
+		}
+		else return l->valeur;
+
+}
 
 
 /*Dernier: TListeEntier â†’ int â€“ â€“ retourne le dernier eÌleÌment de la liste ; renvoie une erreur si la liste est vide.*/
-/* int Dernier(TListe l)
+int Dernier(TListe l)
 {
-*************************
-* A completer           *
-*************************
-}*/
+		TListe temp;
+		temp = l;
+		if (EstVide(l))
+		{
+			printf("ERREUR : Liste vide.\n");
+		}
+
+		else if (EstVide(temp->suivant))
+		{
+			return temp->valeur;
+		}
+		else
+		{
+			temp = temp->suivant;
+			Dernier(temp);
+		}
+}
 
 
 /* SupprimerTeÌ‚te: TListeEntier â†’ TListeEntier â€“ â€“ retourne la liste obtenue en ayant supprimeÌ le premier eÌleÌment
