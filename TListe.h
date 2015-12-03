@@ -19,6 +19,8 @@ TListe AjoutFin(TListe l, int val) ;
 int Premier(TListe l);
 int Dernier(TListe l);
 TListe SupprimerTete(TListe l);
+TListe SupprimerFin(TListe l);
+int NbOccurence(int e, TListe l);
 
 /**************************************************/
 /* A vous de completer pour les fonctions         */

@@ -102,29 +102,73 @@ int Dernier(TListe l)
 		{
 			printf("ERREUR : Liste vide.\n");
 		}
-
-		else if (EstVide(temp->suivant))
-		{
+		else{
+		while(!(EstVide(temp->suivant)))
+			{
+				temp=temp->suivant;
+			}
 			return temp->valeur;
-		}
-		else
-		{
-			temp = temp->suivant;
-			Dernier(temp);
 		}
 }
 
 
 /* SupprimerTeÌ‚te: TListeEntier â†’ TListeEntier â€“ â€“ retourne la liste obtenue en ayant supprimeÌ le premier eÌleÌment
 de la liste ; Erreur si la liste est vide. */
-/* TListe SupprimerTete(TListe l)
+TListe SupprimerTete(TListe l)
 {
-*************************
-* A completer           *
-* penser a deallouer    *
-* l'espace memoire      *
-*************************
-}*/
+	if (EstVide(l))
+	{
+		printf("ERREUR: Liste vide !");
+	}
+	else
+	{
+		TListeEntier* res = malloc(sizeof(TListeEntier));
+		res = l->suivant;
+		return res;
+	}
+}
+
+TListe SupprimerFin(TListe l)
+{
+	if (EstVide(l))
+	{
+		printf("ERREUR: La liste est vide !");
+	}
+	else if (EstVide(l->suivant))
+	{
+		l->precedent->suivant = CreerListe();
+		l->precedent = CreerListe();
+		free(l); // Désallocation de la mémoire
+		return l;
+	}
+	else
+	{
+			SupprimerFin(l->suivant);
+	}
+
+}
+
+
+int NbOccurence(int e, TListe l)
+{
+	if (EstVide(l))
+	{
+		return 0;
+	}
+	else
+	{
+		int cpt = 0;
+		while(!(EstVide(l)))
+		{
+			if (l->valeur == e)
+			{
+				cpt++;
+			}
+			l=l->suivant;
+		}
+		return cpt;
+	}
+}
 
 
 

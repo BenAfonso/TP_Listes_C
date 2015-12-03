@@ -61,16 +61,16 @@ printf("Premier de la liste : %d\n",Premier(CreerListe()));
 printf("Dernier(Vide) va provoquer une erreur\n");
 printf("Dernier de la liste : %d\n",Dernier(CreerListe()));
 
-/*l=SupprimerTete(l);
+l=SupprimerTete(l);
 printf("Element de tete supprimé\n");
-AfficheListe(l);*/
+AfficheListe(l);
 
+l=SupprimerFin(l);
+printf("Element de fin supprimé\n");
+AfficheListe(l);
 
-/**************************************************/
-/* A vous de completer pour tester les fonctions  */
-/* SupprimerFin                                   */
-/* NbOccurence                                    */
-/**************************************************/
+int e=11;
+printf("Nombre d'occurence de %d: %d\n",e,NbOccurence(e,l));
 
 
 
