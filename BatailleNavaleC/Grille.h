@@ -8,29 +8,48 @@
 #define False 0
 #define True !False
 
+
+/************************/
+/* Structure de données */
+/* Amusez vous :)       */
+/************************/
+
 typedef struct Grille Grille;
 
 
-// Définition des fonctions
+/*******************************/
+/* Spécification Fonctionnelle */
+/*******************************/
 
-/* Renvoie True si la Position est dans la grille */
+/* Renvoie True si la Position est dans la grille, False sinon */
 Bool coordonneeValide(Grille G,Position P);
+
 /* Marquer la position */
+/* marquerPosition(Grille,Position) <=> (coordonneeValide(Grille,Position) ET Non(aUnBateau(Grille,Position))) Sinon Renvoyer une ERREUR */
 Grille marquerPosition(Grille G ,Position P);
-// Pré: marquerPosition(Grille,Position) <=> (coordonneeValide(Grille,Position) ET Non(aUnBateau(Grille,Position))) Sinon Renvoyer une ERREUR
+
+/* Renvoie True si un bateau se trouve à la position, False sinon */
+/* aUnBateau(Grille,Position) => coordonneeValide(Grille,Position) */
 Bool aUnBateau(Grille G ,Position P);
-// aUnBateau(Grille,Position) => coordonneeValide(Grille,Position)
+
+/* Renvoie True si la 'case' est intacte, False sinon */
+/* estIntacte(Grille,Position) <=> aUnBateau(Grille,Position) Sinon renvoyer False*/
 Bool estIntacte(Grille G,Position P);
-// estIntacte(Grille,Position) <=> aUnBateau(Grille,Position) Sinon renvoyer False
 
 /* Renvoie le bateau à la position */
+/* Non(coordonneeValide(Grille,Position)) => ERREUR */
+/* quelBateau(G,P) <=> aUnBateau(G,P) Renvoie une erreur sinon */
 Bateau quelBateau(Grille G,Position P);
-// Non(coordonneeValide(Grille,Position)) => ERREUR
+
+/* Enlever une position de la grille */
+/* enleverPosition(Grille,Position) <=> aUnBateau(Grille,Position) */
 Grille enleverPosition(Grille G,Position P);
-// enleverPosition(Grille,Position) <=> aUnBateau(Grille,Position)
+
+/* Renvoie True si un bateau est sur la ligne et/ou colonne */
+/* Non(coordonneeValide(Grille,Position)) => ERREUR */
 Bool bateauEnVue(Grille G,Position P);
 
-/* placerBateau : Position x Grille x Bateau -> Grille */
+/* Placer un bateau dans la grille */
 /* Marque la position sur la grille */
 Grille placerBateau(Position P,Grille G,Bateau B);
 #endif

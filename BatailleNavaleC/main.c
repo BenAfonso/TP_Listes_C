@@ -18,6 +18,7 @@ void placerBateaux(){
 
 int main() {
 
+<<<<<<< HEAD
   // On créé la partie
 
   Partie* partie;
@@ -51,6 +52,10 @@ int main() {
   }
 
 
+=======
+  // Creer Partie
+  // 
+>>>>>>> 3ad65940cbea5da412f313e0066d88f3ecceddd7
 
 
 

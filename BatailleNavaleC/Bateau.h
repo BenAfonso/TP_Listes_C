@@ -7,10 +7,18 @@
 #define False 0
 #define True !False
 
+/************************/
+/* Structure de données */
+/* Amusez vous :)       */
+/************************/
+
 typedef struct Bateau Bateau ;
 
-// Définition des fonctions
-// Creer bateau à faire
+
+/*******************************/
+/* Spécification Fonctionnelle */
+/*******************************/
+
 
 /* Renvoie la taille d'un bateau */
 int get_taille(Bateau);

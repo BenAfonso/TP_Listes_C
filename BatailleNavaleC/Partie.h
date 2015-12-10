@@ -5,9 +5,18 @@
 #include "Joueur.h"
 
 /* La partie crée 2 joueurs et initialise leurs bateaux */
+
+/************************/
+/* Structure de données */
+/* Amusez vous :)       */
+/************************/
+
 typedef struct Partie Partie ;
 
-// Définition des fonctions
+/*******************************/
+/* Spécification Fonctionnelle */
+/*******************************/
+
 /* Renvoie le premier joueur */
 Joueur get_Joueur1(Partie);
 /* Renvoie le second joueur */
