@@ -16,6 +16,7 @@
 /* Amusez vous :)       */
 /************************/
 
+
 typedef struct Position Position ;
 
 

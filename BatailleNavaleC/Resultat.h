@@ -11,7 +11,9 @@
 /* Amusez vous :)       */
 /************************/
 
+
 typedef struct Resultat Resultat ;
+
 
 /*******************************/
 /* Spécification Fonctionnelle */

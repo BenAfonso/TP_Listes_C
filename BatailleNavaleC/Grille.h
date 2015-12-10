@@ -14,6 +14,7 @@
 /* Amusez vous :)       */
 /************************/
 
+
 typedef struct Grille Grille;
 
 

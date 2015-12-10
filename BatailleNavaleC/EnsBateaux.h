@@ -10,6 +10,7 @@
 /* Amusez vous :)       */
 /************************/
 
+
 typedef struct EnsBateaux EnsBateaux ;
 
 

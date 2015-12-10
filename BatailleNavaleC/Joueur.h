@@ -14,7 +14,8 @@
 /* Amusez vous :)       */
 /************************/
 
-typedef struct Joueur Joueur ;
+
+typedef struct Joueur Joueur;
 
 /*******************************/
 /* Spécification Fonctionnelle */
