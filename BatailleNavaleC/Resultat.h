@@ -6,7 +6,8 @@
 #include "Grille.h"
 #include "Bateau.h"
 
-typedef Resultat* Resultat;
+
+typedef struct Resultat Resultat ;
 
 // Définition des fonctions
 

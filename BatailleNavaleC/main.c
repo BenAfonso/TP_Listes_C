@@ -7,7 +7,7 @@
 #include "Resultat.h"
 #include "Position.h"
 
-int main {
+int main() {
 
   return 0 ;
 }

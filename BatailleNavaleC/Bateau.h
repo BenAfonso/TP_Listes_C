@@ -7,20 +7,33 @@
 #define False 0
 #define True !False
 
-typedef Bateau* Bateau;
+typedef struct Bateau Bateau ;
 
 // Définition des fonctions
 // Creer bateau à faire
 
+/* Renvoie la taille d'un bateau */
 int get_taille(Bateau);
 
+/* Renvoie True si le bateau est placé, False sinon */
 Bool get_estPlace(Bateau);
-int get_nbCasesIntactes(Bateau);
-Bateau set_taille(Bateau,int);
-Bateau set_estPlace(Bateau,bool);
 
+/* Renvoie le nombre de cases intactes du bateau */
+int get_nbCasesIntactes(Bateau);
+
+/* set la taille d'un bateau */
+Bateau set_taille(Bateau,int);
+
+/* set_estPlace(Bateau) => get_estPlace(Bateau)*/
+Bateau set_estPlace(Bateau,Bool);
+
+/* Enleve une case intacte à un bateau.*/
+/* caseTouche(Bateau) => get_nbCasesIntactes(Bateau) - 1 */
+/* caseTouche(Bateau) <=> Non(estCoule(Bateau)) Sinon ERREUR*/
 Bateau caseTouche(Bateau);
+
+/* Renvoie True si le bateau est coulé <=> get_nbCasesIntactes(Bateau) == 0 */
 Bool estCoule(Bateau);
-// estCoule(Bateau) <=> get_nbCasesIntactes(Bateau) == 0 et get_estPlace(Bateau)
-// caseTouche(Bateau) <=> get_nbCasesIntactes(Bateau) > 0
+
+
 #endif

@@ -7,7 +7,9 @@
 #define Bool int
 #define False 0
 #define True !False
-typedef Grille* Grille;
+
+typedef struct Grille Grille;
+
 
 // Définition des fonctions
 

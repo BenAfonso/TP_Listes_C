@@ -4,7 +4,8 @@
 #include <stdio.h>
 #include "Joueur.h"
 
-typedef Partie* Partie;
+/* La partie crée 2 joueurs et initialise leurs bateaux */
+typedef struct Partie Partie ;
 
 // Définition des fonctions
 /* Renvoie le premier joueur */

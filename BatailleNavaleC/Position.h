@@ -10,7 +10,7 @@
 #define False 0
 #define True !False
 
-typedef Position* Position;
+typedef struct Position Position ;
 
 int getX(Position);
 int getY(Position);
@@ -26,10 +26,10 @@ Position set_Tire(Position);
 
 
 
-Bool est_AdjacenteX(Position1,Position2)
+Bool est_AdjacenteX(Position Position1,Position Position2);
 // Renvoie True si abs(getX(Position1)-getX(Position2))==1
 
-Bool est_AdjacenteY(Position1,Position2)
+Bool est_AdjacenteY(Position Position1,Position Position2);
 // Renvoie True si abs(getY(Position1)-getY(Position2))==1
 
 #endif

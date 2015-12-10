@@ -4,7 +4,7 @@
 #include <stdio.h>
 #include "Bateau.h"
 
-typedef EnsBateaux* EnsBateaux;
+typedef struct EnsBateaux EnsBateaux ;
 
 // Définition des fonctions
 // Creer bateau à faire
