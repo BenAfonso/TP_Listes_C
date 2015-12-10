@@ -8,18 +8,36 @@
 #define False 0
 #define True !False
 
+
+/************************/
+/* Structure de données */
+/* Amusez vous :)       */
+/************************/
+
 typedef struct Joueur Joueur ;
 
-// Définition des fonctions
+/*******************************/
+/* Spécification Fonctionnelle */
+/*******************************/
+
+/* Affecte un nom à un joueur */
+Joueur set_NomJoueur(char[]);
+
+/* Retourne le nom d'un joueur */
+char* get_NomJoueur(Joueur J);
 
 /* Renvoie l'Ensemble de bateaux du Joueur J */
 EnsBateaux get_Bateaux(Joueur J);
 
-
+/* Retourne la Grille associée au joueur */
 Grille get_Grille(Joueur J);
-/* Crée un set de base de bateau */
+
+/* Initialise le set de base de bateau du joueur automatiquement lors de sa création  */
 EnsBateaux initBateaux(Joueur J);
+
+/* Renvoie True si le joueur J a perdu, false sinon */
+/* a_perdu(J) <=> get_NombreBateauxNonCoules(J)==0, False sinon */
 Bool a_perdu(Joueur J);
-// Renvoie True si get_NombreBateauxNonCoules(Joueur)==0
+
 
 #endif
