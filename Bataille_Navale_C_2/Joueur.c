@@ -1,18 +1,20 @@
 # include <stdio.h>
 # include "Joueur.h"
+#include "Flotte.h"
 
-Joueur creerJoueur()
+JoueurN creerJoueur()
 {
-    creerFlotte();
-    return NULL;
+    JoueurN joueur;
+    joueur->flotte = creerFlotte();
+    return joueur;
 }
 
-Flotte flotte(Joueur J)
+FlotteN flotte(JoueurN J)
 {
-    return NULL;
+    return J->flotte;
 }
 
-Joueur placerBateau(Joueur J)
+JoueurN placerBateau(JoueurN J)
 {
-    return NULL
+    /* A faire plus tard */
 }

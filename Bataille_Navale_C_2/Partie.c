@@ -1,64 +1,64 @@
 #include "Partie.h"
-
- /* creer une partie vide, incluant création de 2 joueurs, d'une flotte pour chaque joueur */
-Partie creerPartie()
+#include "Joueur.h"
+ /* creer une partie vide, incluant création de 2 JoueurNs, d'une flotte pour chaque JoueurN */
+PartieNN creerPartie()
 {
-    /* Création de deux joueurs */
-    Joueur joueur1;
-    Joueur joueur2;
-    /* Création d'une flotte pour les joueurs */
+    /* Création de deux JoueurNs */
+    JoueurN Joueur1;
+    JoueurN Joueur2;
+    /* Création d'une flotte pour les JoueurNs */
 
 
     /* Creation d'une partie */
-    Partie partie;
-    partie->joueur1 = joueur1;
-    partie->joueur2 = joueur2;
+    PartieN partie;
+    partie->Joueur1 = Joueur1;
+    partie->Joueur2 = Joueur2;
     return partie;
 }
 
-Partie commencerPartie(Partie partie)
+PartieN commencerPartie(PartieN partie)
 {
-    partie->joueurActif = partie->joueur1;
-    partie->joueurInactif = partie->joueur2;
+    partie->joueurActif = partie->Joueur1;
+    partie->joueurInactif = partie->Joueur2;
     return partie;
 }
 
-Joueur joueur1(Partie partie)
+JoueurN Joueur1(PartieN partie)
 {
-    return partie->joueur1;
+    return partie->Joueur1;
 }
 
-Joueur joueur2(Partie partie)
+JoueurN Joueur2(PartieN partie)
 {
-    return partie->joueur2;
+    return partie->Joueur2;
 }
 
-Joueur joueurActif(Partie partie)
+JoueurN joueurActif(PartieN partie)
 {
     return partie->joueurActif;
 }
 
-Joueur joueurInactif(Partie partie)
+JoueurN joueurInactif(PartieN partie)
 {
     return partie->joueurInactif;
 }
 
-Partie changerJoueurActif(Partie partie)
+PartieN changerPartieActif(PartieN partie)
 {
-    Joueur temp;
-    /* On échange les joueurs actifs et inactifs */
+    JoueurN temp;
+    /* On échange les JoueurNs actifs et inactifs */
     temp = partie->joueurActif;
     partie->joueurActif = partie->joueurInactif;
     partie->joueurInactif = temp;
-    return partie
+    return partie;
 }
 
-Partie tirer(Partie partie)
+PartieN tirer(PartieN partie)
 {
     /* A FAIRE */
 }
 
-int estFinie(Partie partie)
+int estFinie(PartieN partie)
 {
   /* A FAIRE */
 }

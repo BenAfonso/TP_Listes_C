@@ -1,3 +1,4 @@
+/*
 #include <stdlib.h>
 #include <stdio.h>
 
@@ -6,3 +7,4 @@ typedef Bateau;
 typedef Partie;
 typedef Position;
 typedef Flotte;
+*/
