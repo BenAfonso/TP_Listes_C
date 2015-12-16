@@ -3,7 +3,6 @@
 
 #include <stdlib.h>
 #include <stdio.h>
-#include "Structure.h"
 
 
 typedef struct Position Position ;
@@ -15,7 +14,7 @@ struct Position
 
 typedef Position* PositionN;
 
-Position choixPosition();           /* demande de rentrer 2 entiers et en fait une position */
+PositionN choixPosition();           /* demande de rentrer 2 entiers et en fait une position */
 
 int estTouchee(PositionN, FlotteN);   /* retourne 1 si la position paramètre correspond à la position d'un bateau dans la flotte en paramètre, 0 sinon */
 int estCoulee(PositionN, FlotteN);    /* retourne 1 si la position paramètre correspond au dernier morceau du bateau au préalablement touché,0 sinon, NECESSITE estTouchee(Position, Flotte)==1 */

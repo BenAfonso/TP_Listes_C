@@ -1,7 +1,7 @@
 #include "Partie.h"
 #include "Joueur.h"
  /* creer une partie vide, incluant création de 2 JoueurNs, d'une flotte pour chaque JoueurN */
-PartieNN creerPartie()
+PartieN creerPartie()
 {
     /* Création de deux JoueurNs */
     JoueurN Joueur1;
@@ -11,26 +11,26 @@ PartieNN creerPartie()
 
     /* Creation d'une partie */
     PartieN partie;
-    partie->Joueur1 = Joueur1;
-    partie->Joueur2 = Joueur2;
+    partie->joueur1 = Joueur1;
+    partie->joueur2 = Joueur2;
     return partie;
 }
 
 PartieN commencerPartie(PartieN partie)
 {
-    partie->joueurActif = partie->Joueur1;
-    partie->joueurInactif = partie->Joueur2;
+    partie->joueurActif = partie->joueur1;
+    partie->joueurInactif = partie->joueur2;
     return partie;
 }
 
 JoueurN Joueur1(PartieN partie)
 {
-    return partie->Joueur1;
+    return partie->joueur1;
 }
 
 JoueurN Joueur2(PartieN partie)
 {
-    return partie->Joueur2;
+    return partie->joueur2;
 }
 
 JoueurN joueurActif(PartieN partie)

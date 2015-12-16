@@ -3,17 +3,17 @@
 
 #include <stdlib.h>
 #include <stdio.h>
-#include "Structure.h"
 #include "Bateau.h"
 
 typedef struct Flotte Flotte ;
 struct Flotte
 {
     int nbreBateaux;
+    /* Ensemble de bateaux */
 
 };
 
-typedef Flotte * FlotteN;
+typedef Flotte* FlotteN;
 
 FlotteN creerFlotte();           /* crée une flotte vide */
 int estVideFlotte(FlotteN);      /* retourne 1 si la flotte est vide, 0 sinon, estVideFlotte(creerFlotte())==1 */

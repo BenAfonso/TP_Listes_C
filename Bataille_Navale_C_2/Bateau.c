@@ -1,26 +1,27 @@
 #include "Bateau.h"
 
 
-Bateau creerBateau(int taille)
+BateauN creerBateau(int taille)
 {
-    Bateau bateau;
+    BateauN bateau;
     bateau->taille = taille;
-    bateau->listeMorceaux = Position[];
+    /*bateau->listeMorceaux = Position[];*/
     return bateau;
 
 }
-
+/*
 Position[] listeMorceaux(Bateau bateau)
 {
     return bateau->listeMorceaux;
 }
+*/
 
-Bateau suppMorceau(Position p)
+BateauN suppMorceau(PositionN p)
 {
     /* Supprimer une case du tableau */
 }
 
-Bateau ajoutMorceau(Position p);
+BateauN ajoutMorceau(PositionN p)
 {
     /* Ajouter une case dans un tableau */
 }

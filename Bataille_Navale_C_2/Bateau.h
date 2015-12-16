@@ -3,7 +3,6 @@
 
 #include <stdlib.h>
 #include <stdio.h>
-#include "Structure.h"
 #include "Position.h"
 
 /* Structure de données */
@@ -11,7 +10,7 @@ typedef struct Bateau Bateau;
 struct Bateau
 {
     int taille;
-    PositionN listeMorceaux[];
+    /*PositionN listeMorceaux[];*/
 
 };
 typedef struct Bateau* BateauN;
