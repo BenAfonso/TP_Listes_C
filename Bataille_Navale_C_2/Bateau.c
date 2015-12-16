@@ -1,4 +1,6 @@
 #include "Bateau.h"
+#include "Position.h"
+
 
 
 BateauN creerBateau(int taille)
