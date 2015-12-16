@@ -4,7 +4,6 @@
 #include <stdlib.h>
 #include <stdio.h>
 #include "Position.h"
-#include "Bateau.h"
 
 /* Structure de données */
 typedef struct Bateau Bateau;
@@ -14,7 +13,7 @@ struct Bateau
     /*PositionN listeMorceaux[];*/
 
 };
-typedef struct Bateau* BateauN;
+typedef Bateau* BateauN;
 
 /* Spécification fonctionnelle d'un autre groupe */
 

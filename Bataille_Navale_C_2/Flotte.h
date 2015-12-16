@@ -5,7 +5,7 @@
 #include <stdio.h>
 #include "Bateau.h"
 
-typedef struct Flotte Flotte ;
+typedef struct Flotte Flotte;
 struct Flotte
 {
     int nbreBateaux;
@@ -14,6 +14,7 @@ struct Flotte
 };
 
 typedef Flotte* FlotteN;
+
 
 FlotteN creerFlotte();           /* crée une flotte vide */
 int estVideFlotte(FlotteN f);      /* retourne 1 si la flotte est vide, 0 sinon, estVideFlotte(creerFlotte())==1 */
