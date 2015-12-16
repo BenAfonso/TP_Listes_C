@@ -5,6 +5,15 @@
 #include <stdio.h>
 #include "Structure.h"
 
+typedef struct Flotte Flotte ;
+struct Flotte
+{
+    int nbreBateaux;
+
+};
+
+typedef Flotte * FlotteN
+
 Flotte creerFlotte();           /* crée une flotte vide */
 int estVideFlotte(Flotte);      /* retourne 1 si la flotte est vide, 0 sinon, estVideFlotte(creerFlotte())==1 */
 Bateau listeBateaux(Flotte);    /* retourne la liste de bateaux dont est composée la flotte, retourne vide si elle est vide */
