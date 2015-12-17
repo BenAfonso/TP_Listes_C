@@ -2,10 +2,7 @@
 #include <stdlib.h>
 #include <stdio.h>
 #include "Partie.h"
-#include "Flotte.h"
-#include "Joueur.h"
-#include "Position.h"
-#include "Bateau.h"
+
 
 int main (void)
 {
@@ -13,9 +10,9 @@ int main (void)
     printf("John Cena welcomes you to Bataillette Navale 2015. In the most mindblowing, balltwisting battleship match of the century, two players will face their destinies in the arena of death. \n");
 
 /* crée une partie appelée "partie" */
-/*
+
     PartieN partie = creerPartie();
-*/
+
 /* initialise une variable j1 correspondant au joueur 1 de la partie */
 /*
     JoueurN j1 = joueur1(partie);

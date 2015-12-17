@@ -3,7 +3,7 @@ C=gcc
 CFLAGS= -Wall -ansi
 LDFLAGS=
 
-SOURCES=Main.c Bateau.c Partie.c Joueur.c
+SOURCES=Main.c
 #Flotte.c  Position.c
 
 OBJECTS=$(SOURCES)

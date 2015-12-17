@@ -1,5 +1,6 @@
 #include "Partie.h"
 #include "Joueur.h"
+
  /* creer une partie vide, incluant création de 2 JoueurNs, d'une flotte pour chaque JoueurN */
 PartieN creerPartie()
 {

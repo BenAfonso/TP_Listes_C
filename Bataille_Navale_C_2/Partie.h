@@ -3,17 +3,8 @@
 
 #include <stdlib.h>
 #include <stdio.h>
-#include "Joueur.h"
+#include "Structure.h"
 
-typedef struct Partie Partie;
-struct Partie
-{
-  JoueurN joueur1;
-  JoueurN joueur2;
-  JoueurN joueurActif;
-  JoueurN joueurInactif;
-};
-typedef Partie* PartieN;
 
 PartieN creerPartie();               /* creer uneartie vide, incluant création de 2 joueurs, d'une flotteour chaque joueur */
 JoueurN joueur1(PartieN p);             /* retourne le joueur 1 de laartie */

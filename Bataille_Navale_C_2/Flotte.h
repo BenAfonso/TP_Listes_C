@@ -3,17 +3,9 @@
 
 #include <stdlib.h>
 #include <stdio.h>
-#include "Bateau.h"
+#include "Structure.h"
 
-typedef struct Flotte Flotte;
-struct Flotte
-{
-    int nbreBateaux;
-    /* Ensemble de bateaux */
 
-};
-
-typedef Flotte* FlotteN;
 
 
 FlotteN creerFlotte();           /* crée une flotte vide */

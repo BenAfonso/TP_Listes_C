@@ -3,15 +3,7 @@
 
 #include <stdlib.h>
 #include <stdio.h>
-#include "Flotte.h"
-
-typedef struct Joueur Joueur ;
-struct Joueur
-{
-    FlotteN flotte;
-};
-
-typedef Joueur* JoueurN;
+#include "Structure.h"
 
 JoueurN creerJoueur();           /* crée un joueur inactif, incluant également la création de sa flotte */
 FlotteN flotte(JoueurN j);          /* retourne la flotte du joueur */

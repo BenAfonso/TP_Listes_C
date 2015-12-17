@@ -3,16 +3,9 @@
 
 #include <stdlib.h>
 #include <stdio.h>
-#include "Flotte.h"
+#include "Structure.h"
 
-typedef struct Position Position ;
-struct Position
-{
-    int X;
-    int Y;
-};
 
-typedef Position* PositionN;
 
 PositionN choixPosition();           /* demande de rentrer 2 entiers et en fait une position */
 

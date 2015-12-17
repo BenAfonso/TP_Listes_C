@@ -3,17 +3,9 @@
 
 #include <stdlib.h>
 #include <stdio.h>
-#include "Position.h"
+#include "Structure.h"
 
-/* Structure de données */
-typedef struct Bateau Bateau;
-struct Bateau
-{
-    int taille;
-    /*PositionN listeMorceaux[];*/
 
-};
-typedef Bateau* BateauN;
 
 /* Spécification fonctionnelle d'un autre groupe */
 
