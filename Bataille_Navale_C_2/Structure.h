@@ -1,6 +1,6 @@
 #ifndef STRUCTURE_H
 #define STRUCTURE_H
-
+#define NOMBREBATEAUX = 5
 #include <stdlib.h>
 #include <stdio.h>
 
@@ -9,6 +9,8 @@ struct Flotte
 {
     int nbreBateaux;
     /* Ensemble de bateaux */
+    BateauxN listeBateaux[] = malloc(5*size_of(BateauxN));
+
 
 };
 
@@ -27,7 +29,7 @@ typedef struct Bateau Bateau;
 struct Bateau
 {
     int taille;
-    /*PositionN listeMorceaux[];*/
+    /*Position listeMorceaux[];*/
 
 };
 typedef Bateau* BateauN;
@@ -41,7 +43,7 @@ struct Position
     int Y;
 };
 
-typedef Position* PositionN;
+typedef Position;
 
 typedef struct Partie Partie;
 struct Partie

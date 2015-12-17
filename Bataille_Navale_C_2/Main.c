@@ -11,7 +11,7 @@ int main (void)
 
 /* crée une partie appelée "partie" */
 
-    PartieN partie = creerPartie();
+    /*PartieN partie = creerPartie();*/
 
 /* initialise une variable j1 correspondant au joueur 1 de la partie */
 /*
