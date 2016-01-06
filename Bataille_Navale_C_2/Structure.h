@@ -4,12 +4,23 @@
 #include <stdlib.h>
 #include <stdio.h>
 
+
+/* Structure de données */
+typedef struct Bateau Bateau;
+struct Bateau
+{
+    int taille;
+    /*Position listeMorceaux[];*/
+
+};
+typedef Bateau* BateauN;
+
 typedef struct Flotte Flotte;
 struct Flotte
 {
     int nbreBateaux;
     /* Ensemble de bateaux */
-    BateauxN listeBateaux[] = malloc(5*size_of(BateauxN));
+    BateauN listeBateaux;
 
 
 };
@@ -24,15 +35,7 @@ struct Joueur
 
 typedef Joueur* JoueurN;
 
-/* Structure de données */
-typedef struct Bateau Bateau;
-struct Bateau
-{
-    int taille;
-    /*Position listeMorceaux[];*/
 
-};
-typedef Bateau* BateauN;
 
 
 

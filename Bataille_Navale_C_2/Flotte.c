@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include "Flotte.h"
 #include "Bateau.h"
-
+/*  = malloc(5* sizeof(BateauN)); */
 FlotteN creerFlotte()
 {
     return NULL;
