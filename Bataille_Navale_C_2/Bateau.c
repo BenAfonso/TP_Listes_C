@@ -5,31 +5,31 @@
 
 BateauN creerBateau(int taille)
 {
-    BateauN bateau;
+    BateauN bateau = NULL;
     bateau->taille = taille;
-    bateau->tableauMorceaux = malloc(bateau->taille*size_of(Position));
+    bateau->tableauMorceaux = malloc(bateau->taille*sizeof(Position));
     return bateau;
 
 }
 
 Position* tableauMorceaux(BateauN bateau)
 {
-    return bateau->listeMorceaux;
+    return bateau->tableauMorceaux;
 }
 
 
 BateauN suppMorceau(BateauN bateau, Position p)
 {
   int i = 0;
-  while (i < bateau->taille && bateau->tableauMorceaux[i] != NULL)
+  while ((i < bateau->taille))
   {
     i++;
   }
   if (i != bateau->taille)
   {
-    while i < bateau->taille
+    while (i < bateau->taille)
     {
-      bateau->tableauMorceaux[i] = bateau -> tableauMorceaux[i+1]
+      bateau->tableauMorceaux[i] = bateau -> tableauMorceaux[i+1];
     }
   }
   return bateau;
@@ -38,7 +38,7 @@ BateauN suppMorceau(BateauN bateau, Position p)
 BateauN ajoutMorceau(BateauN bateau, Position p)
 {
     int i = 0;
-    while (i < bateau->taille && bateau->tableauMorceaux[i] != NULL)
+    while (i < bateau->taille)
     {
       i++;
     }

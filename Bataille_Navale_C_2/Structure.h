@@ -6,11 +6,22 @@
 
 
 /* Structure de données */
+
+
+
+
+typedef struct Position Position ;
+struct Position
+{
+    int X;
+    int Y;
+};
+
 typedef struct Bateau Bateau;
 struct Bateau
 {
     int taille;
-    /*Position listeMorceaux[];*/
+    Position* tableauMorceaux;
 
 };
 typedef Bateau* BateauN;
@@ -20,8 +31,7 @@ struct Flotte
 {
     int nbreBateaux;
     /* Ensemble de bateaux */
-    BateauN listeBateaux;
-
+    BateauN tableauBateaux;
 
 };
 
@@ -38,15 +48,6 @@ typedef Joueur* JoueurN;
 
 
 
-
-typedef struct Position Position ;
-struct Position
-{
-    int X;
-    int Y;
-};
-
-typedef Position;
 
 typedef struct Partie Partie;
 struct Partie

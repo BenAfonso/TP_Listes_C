@@ -5,7 +5,7 @@
 
 JoueurN creerJoueur()
 {
-    JoueurN joueur;
+    JoueurN joueur = NULL;
     joueur->flotte = creerFlotte();
     return joueur;
 }
@@ -17,5 +17,6 @@ FlotteN flotte(JoueurN J)
 
 JoueurN placerBateau(JoueurN J)
 {
+    return NULL;
     /* A faire plus tard */
 }

@@ -2,6 +2,7 @@
 #include <stdlib.h>
 #include <stdio.h>
 #include "Partie.h"
+#include "Joueur.h"
 
 
 int main (void)
@@ -11,31 +12,31 @@ int main (void)
 
 /* crée une partie appelée "partie" */
 
-    /*PartieN partie = creerPartie();*/
+    PartieN partie = creerPartie();
 
 /* initialise une variable j1 correspondant au joueur 1 de la partie */
-/*
+
     JoueurN j1 = joueur1(partie);
-*/
+
 /* initialise une variable j2 correspondant au joueur 2 de la partie */
-/*
+
     JoueurN j2 = joueur2(partie);
-*/
+
  /* modifie la partie en appelant commencerPartie(Partie) -> rend j1 actif et laisse j2 inactif */
-/*
+
     partie = commencerPartie(partie);
 
     printf("Player 1 needs to place his ships \n");
-*/
+
 /* demande à j1 de placer ses bateaux */
-/*
+
     placerBateau(j1);
     printf("Player 2 needs to place his ships \n");
-*/
+
 /* demande à j2 de placer ses bateaux */
-/*
+
     placerBateau(j2);
-*/
+
 /* tant que la partie n'est pas terminé -> la flotte de j1 ou j2 n'est pas vide */
 /*
     while((estFinie(partie))==0)
