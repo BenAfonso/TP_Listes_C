@@ -22,7 +22,7 @@ int estTouchee(Position p, FlotteN f)
   int j = 0;
   while (i <= sizeof(f->nbreBateaux))
   {
-    BateauN b = tableauBateaux(f)[i];
+    Bateau b = tableauBateaux(f)[i];
     while (j < taille(b) || (tableauMorceaux(b)[i].X == p.X && tableauMorceaux(b)[i].Y == p.Y))
     {
         j++;
@@ -46,7 +46,7 @@ int estCoulee(Position p, FlotteN f)
     int j = 0;
     while (i <= nbreBateaux(f))
     {
-      BateauN b = tableauBateaux(f)[i];
+      Bateau b = tableauBateaux(f)[i];
       while (j < taille(b) || (tableauMorceaux(b)[i].X == p.X && tableauMorceaux(b)[i].Y == p.Y))
       {
           j++;
@@ -72,7 +72,7 @@ int estVue(Position p, FlotteN f)
   int j=0;
   while (i <= f->nbreBateaux)
   {
-    BateauN b = tableauBateaux(f)[i];
+    Bateau b = tableauBateaux(f)[i];
     while (j < taille(b) || (tableauMorceaux(b)[i].X == p.X || tableauMorceaux(b)[i].Y == p.Y))
     {
         j++;

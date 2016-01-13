@@ -1,18 +1,13 @@
 #include "Partie.h"
 #include "Joueur.h"
 #include "Flotte.h"
- /* creer une partie vide, incluant création de 2 JoueurNs, d'une flotte pour chaque JoueurN */
+ /* creer une partie vide, incluant création de 2 Joueurs, d'une flotte pour chaque Joueur */
 PartieN creerPartie()
 {
-    /* Création de deux JoueurNs */
-    JoueurN Joueur1 = NULL;
-    JoueurN Joueur2 = NULL;
-    /* Création d'une flotte pour les JoueurNs */
-    FlotteN flotte1 = creerFlotte();
-    FlotteN flotte2 = creerFlotte();
-
-    Joueur1->flotte = flotte1;
-    Joueur2->flotte = flotte2;
+    printf("1\n");
+    /* Création de deux Joueurs */
+    Joueur Joueur1 = creerJoueur();
+    Joueur Joueur2 = creerJoueur();
 
     /* Creation d'une partie */
     PartieN partie = NULL;
@@ -29,30 +24,30 @@ PartieN commencerPartie(PartieN partie)
     return partie;
 }
 
-JoueurN joueur1(PartieN partie)
+Joueur joueur1(PartieN partie)
 {
     return partie->joueur1;
 }
 
-JoueurN joueur2(PartieN partie)
+Joueur joueur2(PartieN partie)
 {
     return partie->joueur2;
 }
 
-JoueurN joueurActif(PartieN partie)
+Joueur joueurActif(PartieN partie)
 {
     return partie->joueurActif;
 }
 
-JoueurN joueurInactif(PartieN partie)
+Joueur joueurInactif(PartieN partie)
 {
     return partie->joueurInactif;
 }
 
 PartieN changerPartieActif(PartieN partie)
 {
-    JoueurN temp;
-    /* On échange les JoueurNs actifs et inactifs */
+    Joueur temp;
+    /* On échange les Joueurs actifs et inactifs */
     temp = partie->joueurActif;
     partie->joueurActif = partie->joueurInactif;
     partie->joueurInactif = temp;

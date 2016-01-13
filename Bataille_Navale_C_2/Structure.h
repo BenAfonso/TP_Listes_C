@@ -22,19 +22,16 @@ struct Bateau
 {
     int taille;
     Position* tableauMorceaux;
-
 };
-typedef Bateau* BateauN;
+
 
 typedef struct Flotte Flotte;
 struct Flotte
 {
     int nbreBateaux;
-    /* Ensemble de bateaux */
-    BateauN tableauBateaux;
+    Bateau* tableauBateaux;
 
 };
-
 typedef Flotte* FlotteN;
 
 typedef struct Joueur Joueur ;
@@ -43,7 +40,6 @@ struct Joueur
     FlotteN flotte;
 };
 
-typedef Joueur* JoueurN;
 
 
 
@@ -52,10 +48,10 @@ typedef Joueur* JoueurN;
 typedef struct Partie Partie;
 struct Partie
 {
-  JoueurN joueur1;
-  JoueurN joueur2;
-  JoueurN joueurActif;
-  JoueurN joueurInactif;
+  Joueur joueur1;
+  Joueur joueur2;
+  Joueur joueurActif;
+  Joueur joueurInactif;
 };
 typedef Partie* PartieN;
 

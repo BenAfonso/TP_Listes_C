@@ -9,21 +9,21 @@ int main (void)
 {
 
     printf("John Cena welcomes you to Bataillette Navale 2015. In the most mindblowing, balltwisting battleship match of the century, two players will face their destinies in the arena of death. \n");
-
+    printf("Test1\n");
 /* crée une partie appelée "partie" */
 
     PartieN partie = creerPartie();
 
 /* initialise une variable j1 correspondant au joueur 1 de la partie */
-
-    JoueurN j1 = joueur1(partie);
+    printf("Test2\n");
+    Joueur j1 = joueur1(partie);
 
 /* initialise une variable j2 correspondant au joueur 2 de la partie */
-
-    JoueurN j2 = joueur2(partie);
+    printf("Test3\n");
+    Joueur j2 = joueur2(partie);
 
  /* modifie la partie en appelant commencerPartie(Partie) -> rend j1 actif et laisse j2 inactif */
-
+    printf("Test4\n");
     partie = commencerPartie(partie);
 
     printf("Player 1 needs to place his ships \n");

@@ -3,54 +3,54 @@
 
 
 
-BateauN creerBateau(int taille)
+Bateau creerBateau(int taille)
 {
-    BateauN bateau = NULL;
-    bateau->taille = taille;
-    bateau->tableauMorceaux = malloc(bateau->taille*sizeof(Position));
+    Bateau bateau;
+    bateau.taille = taille;
+    bateau.tableauMorceaux = (Position*)malloc(bateau.taille*sizeof(Position));
     return bateau;
 
 }
 
-Position* tableauMorceaux(BateauN bateau)
+Position* tableauMorceaux(Bateau bateau)
 {
-    return bateau->tableauMorceaux;
+    return bateau.tableauMorceaux;
 }
 
 
-BateauN suppMorceau(BateauN bateau, Position p)
+Bateau suppMorceau(Bateau bateau, Position p)
 {
   int i = 0;
-  while ((i < bateau->taille))
+  while ((i < bateau.taille))
   {
     i++;
   }
-  if (i != bateau->taille)
+  if (i != bateau.taille)
   {
-    while (i < bateau->taille)
+    while (i < bateau.taille)
     {
-      bateau->tableauMorceaux[i] = bateau -> tableauMorceaux[i+1];
+      bateau.tableauMorceaux[i] = bateau.tableauMorceaux[i+1];
     }
   }
   return bateau;
 }
 
-BateauN ajoutMorceau(BateauN bateau, Position p)
+Bateau ajoutMorceau(Bateau bateau, Position p)
 {
     int i = 0;
-    while (i < bateau->taille)
+    while (i < bateau.taille)
     {
       i++;
     }
-    if (i != bateau->taille)
+    if (i != bateau.taille)
     {
-      bateau->tableauMorceaux[i+1] = p;
+      bateau.tableauMorceaux[i+1] = p;
     }
     return bateau;
 }
 
-int taille(BateauN bateau)
+int taille(Bateau bateau)
 {
   /* A REVOIR  */
-  return sizeof(bateau->tableauMorceaux);
+  return sizeof(bateau.tableauMorceaux);
 }

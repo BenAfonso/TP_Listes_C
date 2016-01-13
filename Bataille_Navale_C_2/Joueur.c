@@ -3,20 +3,22 @@
 #include "Flotte.h"
 #include "Joueur.h"
 
-JoueurN creerJoueur()
+Joueur creerJoueur()
 {
-    JoueurN joueur = NULL;
-    joueur->flotte = creerFlotte();
+    Joueur joueur;
+
+    joueur.flotte = creerFlotte();
+
     return joueur;
 }
 
-FlotteN flotte(JoueurN J)
+FlotteN flotte(Joueur J)
 {
-    return J->flotte;
+    return J.flotte;
 }
 
-JoueurN placerBateau(JoueurN J)
+Joueur placerBateau(Joueur J)
 {
-    return NULL;
+    return J;
     /* A faire plus tard */
 }
