@@ -1,6 +1,7 @@
 #include "Partie.h"
 #include "Joueur.h"
 #include "Flotte.h"
+#include "Position.h"
  /* creer une partie vide, incluant création de 2 Joueurs, d'une flotte pour chaque Joueur */
 Partie creerPartie()
 {
@@ -43,7 +44,7 @@ Joueur joueurInactif(Partie partie)
     return partie.joueurInactif;
 }
 
-Partie changerPartieActif(Partie partie)
+Partie changerJoueurActif(Partie partie)
 {
     Joueur temp;
     /* On échange les Joueurs actifs et inactifs */
@@ -55,12 +56,33 @@ Partie changerPartieActif(Partie partie)
 
 Partie tirer(Partie partie)
 {
+    Position PosTir=choixPosition();
+    if (estValide(PosTir))
+    {
+        if(estCoulee(PosTir,flotte(joueurInactif(partie))))
+        {
+          printf("Coulé !");
+          /* Faire les modifications sur le bateau coulé */
+        }
+        else if(estTouchee(PosTir,flotte(joueurInactif(partie))))
+        {
+          printf("Touché !");
+          /* Faire les modifications nécessaires sur le bateau touché */
+        }
+        else if (estVue(PosTir,flotte(joueurInactif(partie))))
+        {
+            printf("En vue !");
+        }
+        else
+        {
+            printf("Raté !");
+        }
+    }
     return partie;
-    /* A FAIRE */
 }
 
 int estFinie(Partie partie)
 {
-  return 0;
-  /* A FAIRE */
+  return (estVideFlotte(flotte(joueur1(partie))) || estVideFlotte(flotte(joueur1(partie))));
+
 }

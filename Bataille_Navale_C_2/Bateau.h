@@ -14,6 +14,10 @@ Position* tableauMorceaux(Bateau b); /* retourne la liste des positions dont le 
 Bateau suppMorceau(Bateau b,Position p);   /* supprime une position dans la listeMorceaux si le bateau est touché */
 Bateau ajoutMorceau(Bateau b,Position p);  /* ajoute une position dans la listeMorceaux lors du placement des bateaux */
 
+/* Fonctions privées */
+Bateau set_EstPlace(Bateau b);
+int get_EstPlace(Bateau b);
+
 int taille(Bateau b);
 
 #endif

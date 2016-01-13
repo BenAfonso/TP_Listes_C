@@ -22,6 +22,7 @@ struct Bateau
 {
     int taille;
     Position* tableauMorceaux;
+    int estPlace;
 };
 
 

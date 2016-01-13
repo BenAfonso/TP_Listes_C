@@ -31,6 +31,7 @@ int estRatee(Position p, FlotteN f)
 int estValide(Position p);         /* retourne 1 si les coordonnées de la position sont comprises entre 1 et 20, et si estDans(Position, Flotte) == 0,  0 sinon */
 int estDans(Position p, FlotteN f);    /* retourne 1 si la position paramètre est déjà correspondant à une position de bateau dans la flotte */
 
+
 /* Pourquoi avoir besoin de estDans ? Même chose que estTouche(p,f)*/
 int estDans(Position p, FlotteN f)
 {
@@ -43,3 +44,17 @@ estValide(p) <=> estDans(p,Flotte) /*<= QUELLE FLOTTE?*/
 /* Préconditions ? estDans(p,f)*/
 BateauN suppMorceau(Position p);   /* supprime une position dans la listeMorceaux si le bateau est touché */
 BateauN ajoutMorceau(Position p);  /* ajoute une position dans la listeMorceaux lors du placement des bateaux */
+
+/* Mélange interface / classes métiers */
+/* Comment gérer les erreurs et dépassements de grille ? */
+/* Détails mais vertical => vers le haut/bas ?, horizontal => gauche/droite ? si horizontal vers droite doit-on mettre vers gauche ? ...*/
+/* En cas d'erreur de saisie, où redémarre-t-on la saisie ? Comment ? */
+Joueur placerBateau(Joueur j);    /* pour 5 bateaux de taille respectives 1, 2, 2, 3, 4, demande au joueur de rentrer une position et une direction qui sera représentée par un entier (0 pour horizontal et 1 pour vertical), plaçant automatiquement les positions correspondantes dans la listeMorceaux de chaque bateau et ajoute le bateau dans la flotte du joueur */
+
+
+/* Mélange interface / classes métiers */
+Partie tirer(Partie p );               /* demande de rentrer uneosition au joueur actif, vérifie si cetteosition touche, coule, voit ou rate un bateau de la flotte du
+                                        joueur inactif et modifie ce dernier si nécessaire, donc laartie est modifiée */
+
+
+/* Manque la posibilité de récupérer le bateau/morceau sur une position ?*/

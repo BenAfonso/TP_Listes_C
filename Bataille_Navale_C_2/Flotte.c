@@ -12,13 +12,14 @@ Flotte creerFlotte()
 
     flotte.tableauBateaux = (Bateau *)malloc(flotte.nbreBateaux*sizeof(Bateau));
 
-    flotte.tableauBateaux[0]=creerBateau(5);
-    flotte.tableauBateaux[1]=creerBateau(4);
+    flotte.tableauBateaux[0]=creerBateau(4);
+    flotte.tableauBateaux[1]=creerBateau(3);
     flotte.tableauBateaux[2]=creerBateau(3);
     flotte.tableauBateaux[3]=creerBateau(2);
     flotte.tableauBateaux[4]=creerBateau(1);
     return flotte;
 }
+
 
 Bateau* tableauBateaux(Flotte f)
 {
@@ -39,4 +40,20 @@ int estVideFlotte(Flotte f)
     {
         return 0;
     }
+}
+
+Flotte ajoutBateau(Flotte f, Bateau bateau)
+{
+    /* Ajout dans le premier vide */
+    int i=0;
+    while(i < f.nbreBateaux)
+    {
+        if (get_EstPlace(tableauBateaux(f)[i]))
+        {
+            f.tableauBateaux[i] = bateau;
+            i=f.nbreBateaux;
+        }
+        i=i+1;
+    }
+    return f;
 }
