@@ -2,65 +2,64 @@
 #include "Joueur.h"
 #include "Flotte.h"
  /* creer une partie vide, incluant création de 2 Joueurs, d'une flotte pour chaque Joueur */
-PartieN creerPartie()
+Partie creerPartie()
 {
-    printf("1\n");
     /* Création de deux Joueurs */
     Joueur Joueur1 = creerJoueur();
     Joueur Joueur2 = creerJoueur();
 
     /* Creation d'une partie */
-    PartieN partie = NULL;
-    partie->joueur1 = Joueur1;
-    partie->joueur2 = Joueur2;
+    Partie partie;
+    partie.joueur1 = Joueur1;
+    partie.joueur2 = Joueur2;
     printf("La partie est créée !\n");
     return partie;
 }
 
-PartieN commencerPartie(PartieN partie)
+Partie commencerPartie(Partie partie)
 {
-    partie->joueurActif = partie->joueur1;
-    partie->joueurInactif = partie->joueur2;
+    partie.joueurActif = partie.joueur1;
+    partie.joueurInactif = partie.joueur2;
     return partie;
 }
 
-Joueur joueur1(PartieN partie)
+Joueur joueur1(Partie partie)
 {
-    return partie->joueur1;
+    return partie.joueur1;
 }
 
-Joueur joueur2(PartieN partie)
+Joueur joueur2(Partie partie)
 {
-    return partie->joueur2;
+    return partie.joueur2;
 }
 
-Joueur joueurActif(PartieN partie)
+Joueur joueurActif(Partie partie)
 {
-    return partie->joueurActif;
+    return partie.joueurActif;
 }
 
-Joueur joueurInactif(PartieN partie)
+Joueur joueurInactif(Partie partie)
 {
-    return partie->joueurInactif;
+    return partie.joueurInactif;
 }
 
-PartieN changerPartieActif(PartieN partie)
+Partie changerPartieActif(Partie partie)
 {
     Joueur temp;
     /* On échange les Joueurs actifs et inactifs */
-    temp = partie->joueurActif;
-    partie->joueurActif = partie->joueurInactif;
-    partie->joueurInactif = temp;
+    temp = partie.joueurActif;
+    partie.joueurActif = partie.joueurInactif;
+    partie.joueurInactif = temp;
     return partie;
 }
 
-PartieN tirer(PartieN partie)
+Partie tirer(Partie partie)
 {
-    return NULL;
+    return partie;
     /* A FAIRE */
 }
 
-int estFinie(PartieN partie)
+int estFinie(Partie partie)
 {
   return 0;
   /* A FAIRE */

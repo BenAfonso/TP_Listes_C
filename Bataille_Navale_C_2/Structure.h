@@ -53,7 +53,7 @@ struct Partie
   Joueur joueurActif;
   Joueur joueurInactif;
 };
-typedef Partie* PartieN;
+
 
 
 
