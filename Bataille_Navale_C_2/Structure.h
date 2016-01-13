@@ -32,12 +32,12 @@ struct Flotte
     Bateau* tableauBateaux;
 
 };
-typedef Flotte* FlotteN;
+
 
 typedef struct Joueur Joueur ;
 struct Joueur
 {
-    FlotteN flotte;
+    Flotte flotte;
 };
 
 

@@ -16,11 +16,11 @@ Position choixPosition()
     return pos;
 }
 
-int estTouchee(Position p, FlotteN f)
+int estTouchee(Position p, Flotte f)
 {
   int i = 0;
   int j = 0;
-  while (i <= sizeof(f->nbreBateaux))
+  while (i <= sizeof(nbreBateaux(f)))
   {
     Bateau b = tableauBateaux(f)[i];
     while (j < taille(b) || (tableauMorceaux(b)[i].X == p.X && tableauMorceaux(b)[i].Y == p.Y))
@@ -38,7 +38,7 @@ int estTouchee(Position p, FlotteN f)
   return 0;
 }   /* retourne 1 si la position paramètre correspond à la position d'un bateau dans la flotte en paramètre, 0 sinon */
 
-int estCoulee(Position p, FlotteN f)
+int estCoulee(Position p, Flotte f)
 {
   if (estTouchee(p,f))
   {
@@ -66,11 +66,11 @@ int estCoulee(Position p, FlotteN f)
   }
 }
 /* retourne 1 si la position paramètre correspond au dernier morceau du bateau au préalablement touché,0 sinon, NECESSITE estTouchee(Position, Flotte)==1 */
-int estVue(Position p, FlotteN f)
+int estVue(Position p, Flotte f)
 {
   int i= 0;
   int j=0;
-  while (i <= f->nbreBateaux)
+  while (i <= nbreBateaux(f))
   {
     Bateau b = tableauBateaux(f)[i];
     while (j < taille(b) || (tableauMorceaux(b)[i].X == p.X || tableauMorceaux(b)[i].Y == p.Y))
@@ -89,7 +89,7 @@ int estVue(Position p, FlotteN f)
 }   /* retourne 1 si la position paramètre correspond à la position d'un bateau dans la flotte en paramètre, 0 sinon */
 
      /* retourne 1 si une des coordonnées de la position paramètre correspond à un bateau de la flotte, 0 sinon*/
-int estRatee(Position p, FlotteN f)
+int estRatee(Position p, Flotte f)
 {
  return (estTouchee(p,f) || estVue(p,f));
 }     /* retourne 1 si la position paramètre ne touche pas et ne voit pas un bateau compris dans la flotte, 0 sinon */
@@ -98,7 +98,7 @@ int estValide(Position p)
   return (p.X >= 0 && p.X <= 20 && p.Y >= 0 && p.Y <= 20);
 }            /* retourne 1 si les coordonnées de la position sont comprises entre 1 et 20, et si estDans(Position, Flotte) == 0,  0 sinon */
 
-int estDans(Position p, FlotteN f)
+int estDans(Position p, Flotte f)
 {
     return estTouchee(p,f);
 }      /* retourne 1 si la position paramètre est déjà correspondant à une position de bateau dans la flotte */

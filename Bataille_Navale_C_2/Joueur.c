@@ -12,7 +12,7 @@ Joueur creerJoueur()
     return joueur;
 }
 
-FlotteN flotte(Joueur J)
+Flotte flotte(Joueur J)
 {
     return J.flotte;
 }
