@@ -14,7 +14,7 @@ Flotte creerFlotte()
 
     flotte.tableauBateaux[0]=creerBateau(4);
     flotte.tableauBateaux[1]=creerBateau(3);
-    flotte.tableauBateaux[2]=creerBateau(3);
+    flotte.tableauBateaux[2]=creerBateau(2);
     flotte.tableauBateaux[3]=creerBateau(2);
     flotte.tableauBateaux[4]=creerBateau(1);
     return flotte;
@@ -32,7 +32,7 @@ int nbreBateaux(Flotte f)
 }
 int estVideFlotte(Flotte f)
 {
-    if (f.nbreBateaux == 0)
+    if (nbreBateaux(f) == 0)
     {
         return 1;
     }
@@ -46,14 +46,21 @@ Flotte ajoutBateau(Flotte f, Bateau bateau)
 {
     /* Ajout dans le premier vide */
     int i=0;
-    while(i < f.nbreBateaux)
+    set_EstPlace(bateau);
+    while(i < nbreBateaux(f) && get_EstPlace(tableauBateaux(f)[i]))
     {
-        if (get_EstPlace(tableauBateaux(f)[i]))
-        {
-            f.tableauBateaux[i] = bateau;
-            i=f.nbreBateaux;
-        }
         i=i+1;
+    }
+    /* Quand on sort, soit le bateau i n'est pas placé, soit i = nombrebateaux */
+    if (i == nbreBateaux(f))
+    {
+        printf("Aucun bateau non placé !");
+    }
+    /* On est sur le premier bateau non placé */
+    else
+    {
+        tableauBateaux(f)[i] = bateau;
+        i=nbreBateaux(f);
     }
     return f;
 }

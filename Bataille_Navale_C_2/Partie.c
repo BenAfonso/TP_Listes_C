@@ -6,8 +6,8 @@
 Partie creerPartie()
 {
     /* Création de deux Joueurs */
-    Joueur Joueur1 = creerJoueur();
-    Joueur Joueur2 = creerJoueur();
+    Joueur Joueur1 = creerJoueur(1);
+    Joueur Joueur2 = creerJoueur(2);
 
     /* Creation d'une partie */
     Partie partie;
@@ -56,27 +56,34 @@ Partie changerJoueurActif(Partie partie)
 
 Partie tirer(Partie partie)
 {
+
+    printf("\n============== TIREEEEEZ ! ===============\n");
     Position PosTir=choixPosition();
     if (estValide(PosTir))
     {
-        if(estCoulee(PosTir,flotte(joueurInactif(partie))))
+        printf("Bon. Au moins elle est valide.\n");
+        if(estCoulee(PosTir,flotte(joueurInactif(partie)))==1)
         {
-          printf("Coulé !");
+          printf("\nCoulé !");
           /* Faire les modifications sur le bateau coulé */
         }
-        else if(estTouchee(PosTir,flotte(joueurInactif(partie))))
+        else if(estTouchee(PosTir,flotte(joueurInactif(partie)))==1)
         {
-          printf("Touché !");
+          printf("\nTouché !");
           /* Faire les modifications nécessaires sur le bateau touché */
         }
-        else if (estVue(PosTir,flotte(joueurInactif(partie))))
+        else if (estVue(PosTir,flotte(joueurInactif(partie)))==1)
         {
-            printf("En vue !");
+            printf("\nEn vue !");
         }
         else
         {
-            printf("Raté !");
+            printf("\nRaté !");
         }
+    }
+    else
+    {
+        printf("\nQuel fromage ! Position non valide.");
     }
     return partie;
 }

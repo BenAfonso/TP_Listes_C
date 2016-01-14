@@ -15,6 +15,7 @@ struct Position
 {
     int X;
     int Y;
+    int Active;
 };
 
 typedef struct Bateau Bateau;
@@ -38,6 +39,7 @@ struct Flotte
 typedef struct Joueur Joueur ;
 struct Joueur
 {
+    int numero;
     Flotte flotte;
 };
 

@@ -9,6 +9,14 @@
 
 Position choixPosition();           /* demande de rentrer 2 entiers et en fait une position */
 
+/* Crée une position non active */
+Position creerPosition();
+/* Post: estActivePos(creerPosition()) == 0 */
+
+/* Permet de savoir si une position est utilisée par un morçeau de bateau */
+int estActivePos(Position p);
+Position ActiverPos(Position p);
+
 int estTouchee(Position p, Flotte f);   /* retourne 1 si la position paramètre correspond à la position d'un bateau dans la flotte en paramètre, 0 sinon */
 int estCoulee(Position p, Flotte f);    /* retourne 1 si la position paramètre correspond au dernier morceau du bateau au préalablement touché,0 sinon, NECESSITE estTouchee(Position, Flotte)==1 */
 int estVue(Position p, Flotte f);       /* retourne 1 si une des coordonnées de la position paramètre correspond à un bateau de la flotte, 0 sinon*/

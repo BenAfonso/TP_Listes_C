@@ -37,7 +37,14 @@ int main (void)
 
     while((estFinie(partie))==0)
     {
-
+        if (quelNumero(joueurActif(partie)) == 1)
+        {
+          printf("Joueur 1: \n");
+        }
+        else
+        {
+          printf("Joueur 2: \n");
+        }
         partie = tirer(partie);
         partie = changerJoueurActif(partie);
     }

@@ -58,3 +58,6 @@ Partie tirer(Partie p );               /* demande de rentrer uneosition au joueu
 
 
 /* Manque la posibilité de récupérer le bateau/morceau sur une position ?*/
+
+/* Il manquait la possibilité de créer une Position sans avoir à la saisir (Dû au mélange interface/classes métier) ce qui empêcher de respecter la spé initial qui était de créer les morceaux automatiquement */
+Position creerPosition();
