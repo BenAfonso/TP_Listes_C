@@ -62,24 +62,26 @@ Partie tirer(Partie partie)
     if (estValide(PosTir))
     {
         printf("Bon. Au moins elle est valide.\n");
-        if(estCoulee(PosTir,flotte(joueurInactif(partie)))==1)
-        {
-          printf("\nCoulé !");
-          /* Faire les modifications sur le bateau coulé */
+        if (estVue(PosTir,flotte(joueurInactif(partie)))==1){
+            if(estTouchee(PosTir,flotte(joueurInactif(partie)))==1){
+                if(estCoulee(PosTir,flotte(joueurInactif(partie)))==1){
+                     printf("\nCoulé !");
+                }
+                else
+                {
+                  printf("\nTouché !");
+                  /* Faire les modifications nécessaires sur le bateau touché */
+                }
+            }
+            else
+            {
+                printf("\nEn vue !");
+            }
         }
-        else if(estTouchee(PosTir,flotte(joueurInactif(partie)))==1)
-        {
-          printf("\nTouché !");
-          /* Faire les modifications nécessaires sur le bateau touché */
-        }
-        else if (estVue(PosTir,flotte(joueurInactif(partie)))==1)
-        {
-            printf("\nEn vue !");
-        }
-        else
-        {
+        else {
             printf("\nRaté !");
         }
+          /* Faire les modifications sur le bateau coulé */
     }
     else
     {

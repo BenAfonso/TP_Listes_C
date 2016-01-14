@@ -3,7 +3,7 @@ C=gcc
 CFLAGS= -Wall -ansi
 LDFLAGS=
 
-SOURCES=Main.c
+SOURCES=*c
 #Flotte.c  Position.c
 
 OBJECTS=$(SOURCES)

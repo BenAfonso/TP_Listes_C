@@ -31,10 +31,10 @@ int estTouchee(Position p, Flotte f)
   int i = 0;
   int j = 0;
   int sortDeBoucle = 0;
-  while (i < nbreBateaux(f) || sortDeBoucle == 0 )
+  while (i < nbreBateaux(f) && sortDeBoucle == 0 )
   {
     Bateau b = tableauBateaux(f)[i];
-    while (j < taille(b) && (!(tableauMorceaux(b)[i].X == p.X || tableauMorceaux(b)[i].Y == p.Y)))
+    while (j < taille(b) && (!(tableauMorceaux(b)[i].X == p.X && tableauMorceaux(b)[i].Y == p.Y)))
     {
         j++;
     }
@@ -59,13 +59,12 @@ int estTouchee(Position p, Flotte f)
 int estCoulee(Position p, Flotte f)
 {
   printf("\n0");
-  if (estTouchee(p,f))
-  {
+
     printf("\n 1");
     int i = 0;
     int j = 0;
     int sortDeBoucle = 0;
-    while (i < nbreBateaux(f) || sortDeBoucle == 1)
+    while (i < nbreBateaux(f) && sortDeBoucle == 0)
     {
       Bateau b = tableauBateaux(f)[i];
       while (j < taille(b) && (!(tableauMorceaux(b)[i].X == p.X && tableauMorceaux(b)[i].Y == p.Y)))
@@ -94,12 +93,9 @@ int estCoulee(Position p, Flotte f)
     else{
       return 0;
     }
-    return 0;
-  }   /* retourne 1 si la position paramètre correspond à la position d'un bateau dans la flotte en paramètre, 0 sinon */
-  else
-  {
-    return 0;
-  }
+
+  /* retourne 1 si la position paramètre correspond à la position d'un bateau dans la flotte en paramètre, 0 sinon */
+
 }
 /* retourne 1 si la position paramètre correspond au dernier morceau du bateau au préalablement touché,0 sinon, NECESSITE estTouchee(Position, Flotte)==1 */
 int estVue(Position p, Flotte f)
@@ -107,7 +103,8 @@ int estVue(Position p, Flotte f)
 
   int i= 0;
   int j=0;
-  while (i <= nbreBateaux(f))
+  int sortDeBoucle = 0;
+  while (i < nbreBateaux(f) && sortDeBoucle == 0)
   {
     Bateau b = tableauBateaux(f)[i];
     while (j < taille(b) && (!(tableauMorceaux(b)[i].X == p.X || tableauMorceaux(b)[i].Y == p.Y)))
@@ -116,13 +113,18 @@ int estVue(Position p, Flotte f)
     }
     if (j < taille(b))
     {
-      return 1;
-      break;
+      sortDeBoucle = 1;
     }
     i++;
 
   }
-  return 0;
+  if (sortDeBoucle == 1){
+      return 1 ;
+  }
+  else {
+      return 0;
+
+  }
 }   /* retourne 1 si la position paramètre correspond à la position d'un bateau dans la flotte en paramètre, 0 sinon */
 
      /* retourne 1 si une des coordonnées de la position paramètre correspond à un bateau de la flotte, 0 sinon*/
