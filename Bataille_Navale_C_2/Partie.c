@@ -70,6 +70,8 @@ Partie tirer(Partie partie)
                 else
                 {
                   printf("\nTouché !");
+                  PosTir.Active = 0;
+
                   /* Faire les modifications nécessaires sur le bateau touché */
                 }
             }
