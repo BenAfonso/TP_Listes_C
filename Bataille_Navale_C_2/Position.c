@@ -22,7 +22,11 @@ Position choixPosition()
     Position pos;
     pos.X = X;
     pos.Y = Y;
+<<<<<<< HEAD
     pos.Active=0;
+=======
+    ActiverPos(pos);
+>>>>>>> 9c209fe3ec3e38e6acddde55fa8d292ab75a1fce
     return pos;
 }
 
@@ -65,16 +69,21 @@ int estCoulee(Position p, Flotte f)
     int i = 0;
     int j = 0;
     int sortDeBoucle = 0;
+    int cpt = 0;
     while (i < nbreBateaux(f) && sortDeBoucle == 0)
     {
       Bateau b = tableauBateaux(f)[i];
       while (j < taille(b) && (!(tableauMorceaux(b)[i].X == p.X && tableauMorceaux(b)[i].Y == p.Y)))
       {
           j++;
+
+          if (estActivePos(p) == 0) {
+            cpt ++;
+          }
       }
       printf("\n 1.5");
       /* Soit aucun morceau touché : j == taille(b) soit morceau touché j = numero du morceau du bateau */
-      if (j < taille(b))
+      if (cpt == taille(b))
       {
 
         /* Sortie de la boucle */
@@ -87,8 +96,9 @@ int estCoulee(Position p, Flotte f)
     printf("\n 2");
     if (sortDeBoucle == 1)
     {
-
+      printf("Bateau coulé\n");
       /* return (taille(b)==1); */
+
       return 1;
     }
     else{
