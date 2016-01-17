@@ -63,7 +63,7 @@ Bateau suppMorceau(Bateau bateau, Position p)
       bateau.tableauMorceaux[i] = bateau.tableauMorceaux[i+1];
     }
   }
-  redimensionner(bateau,taille(bateau)-1);
+  bateau=redimensionner(bateau,taille(bateau)-1);
   return bateau;
 }
 
