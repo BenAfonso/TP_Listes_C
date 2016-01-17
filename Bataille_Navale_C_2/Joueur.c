@@ -29,9 +29,11 @@ Joueur placerBateau(Joueur J)
 {
     int i = 0;
     int j = 0;
+    int sortDeBoucle=0;
     while (i < 5)
     {
-      Bateau BateauCourant = tableauBateaux(J.flotte)[i];
+      sortDeBoucle=0;
+      Bateau BateauCourant = tableauBateaux(flotte(J))[i];
 
       j=0;
       /* Prompt de position */
@@ -47,22 +49,30 @@ Joueur placerBateau(Joueur J)
         i=i-1;
       }
       /* Générer toutes les positions et les tester (estValide(Position))*/
-      while (j < taille(BateauCourant))
+      while (j < taille(BateauCourant) && sortDeBoucle == 0)
       {
          /* Sélection des morçeaux de bateaux un par un */
          /* Ajouts positions dans la liste des morçeaux */
+         if (!(aLaPosition(flotte(J),pos1)))
+         {
+           printf("\n[Placement] Bateau %d, Morceau %d\n",i,j);
+           /* CAS D'ERREURS ? */
+           BateauCourant=ajoutMorceau(BateauCourant,pos1);
+           printf("[Info] Le bateau %d, Morceau %d a bien été placé\n",i,j);
 
-         printf("\n[Placement] Bateau %d, Morceau %d\n",i,j);
-         /* CAS D'ERREURS ? */
-         BateauCourant=ajoutMorceau(BateauCourant,pos1);
-         printf("[Info] Le bateau %d, Morceau %d a bien été placé\n",i,j);
-
-         if (D == 0){
-           pos1.X = pos1.X+1;
+           if (D == 0){
+             pos1.X = pos1.X+1;
+           }
+           else
+           {
+             pos1.Y = pos1.Y+1;
+           }
          }
          else
          {
-           pos1.Y = pos1.Y+1;
+           printf("ERREUR: Case déjà occupée !\n");
+           i=i-1;
+           sortDeBoucle=1;
          }
          j=j+1;
       }

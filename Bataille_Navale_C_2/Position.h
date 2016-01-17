@@ -16,6 +16,7 @@ Position creerPosition();
 /* Permet de savoir si une position est utilisée par un morçeau de bateau */
 int estActivePos(Position p);
 Position ActiverPos(Position p);
+Position DesactiverPos(Position p);
 
 int estTouchee(Position p, Flotte f);   /* retourne 1 si la position paramètre correspond à la position d'un bateau dans la flotte en paramètre, 0 sinon */
 int estCoulee(Position p, Flotte f);    /* retourne 1 si la position paramètre correspond au dernier morceau du bateau au préalablement touché,0 sinon, NECESSITE estTouchee(Position, Flotte)==1 */

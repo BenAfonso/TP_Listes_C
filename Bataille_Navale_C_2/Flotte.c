@@ -51,15 +51,16 @@ int aLaPosition(Flotte f, Position p)
   {
     /* On parcourt les bateaux */
     j=0;
-      while (j<taille(tableauBateaux(f)[j]))
+      while (j<taille(tableauBateaux(f)[i]))
       {
-        if (tableauMorceaux(tableauBateaux(f)[i])[j].X != p.X && tableauMorceaux(tableauBateaux(f)[i])[j].Y != p.Y)
+        if (tableauMorceaux(tableauBateaux(f)[i])[j].X == p.X && tableauMorceaux(tableauBateaux(f)[i])[j].Y == p.Y)
         {
           /* On sort de la boucle */
           sortDeBoucle=1;
         }
         j++;
       }
+      i++;
     /* Puis les morçeaux */
   }
   return sortDeBoucle;
