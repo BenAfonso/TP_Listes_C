@@ -54,7 +54,7 @@ Joueur placerBateau(Joueur J)
 
          printf("\n[Placement] Bateau %d, Morceau %d\n",i,j);
          /* CAS D'ERREURS ? */
-         ajoutMorceau(BateauCourant,pos1);
+         BateauCourant=ajoutMorceau(BateauCourant,pos1);
          printf("[Info] Le bateau %d, Morceau %d a bien été placé\n",i,j);
 
          if (D == 0){

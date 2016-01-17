@@ -20,4 +20,8 @@ int get_EstPlace(Bateau b);
 
 int taille(Bateau b);
 Bateau redimensionner(Bateau b, int taille);
+
+/* Aides */
+void afficherMorceaux(Bateau b);
+
 #endif

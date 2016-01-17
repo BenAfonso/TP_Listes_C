@@ -69,7 +69,6 @@ Bateau suppMorceau(Bateau bateau, Position p)
 
 Bateau ajoutMorceau(Bateau bateau, Position p)
 {
-    ActiverPos(p);
     int i = 0;
     while (i < taille(bateau) && estActivePos(tableauMorceaux(bateau)[i]))
     {
@@ -84,9 +83,22 @@ Bateau ajoutMorceau(Bateau bateau, Position p)
     else
     {
       printf("\nAjout d'un morçeau.");
+      p=ActiverPos(p);
       tableauMorceaux(bateau)[i] = p;
-
+      printf("\n%d %d ETAT %d\n",tableauMorceaux(bateau)[i].X,tableauMorceaux(bateau)[i].Y, estActivePos(tableauMorceaux(bateau)[i]));
+      afficherMorceaux(bateau);
     }
     return bateau;
 
+}
+
+void afficherMorceaux(Bateau bateau)
+{
+  int i=0;
+  /* On parcourt chaque morçeau un à un */
+  while (i<taille(bateau))
+  {
+    printf("(%d,%d)\n",tableauMorceaux(bateau)[i].X,tableauMorceaux(bateau)[i].Y);
+    i++;
+  }
 }

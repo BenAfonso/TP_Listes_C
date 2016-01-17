@@ -24,4 +24,11 @@ int estRatee(Position p, Flotte f);     /* retourne 1 si la position paramètre 
 int estValide(Position p);            /* retourne 1 si les coordonnées de la position sont comprises entre 1 et 20, et si estDans(Position, Flotte) == 0,  0 sinon */
 int estDans(Position p, Flotte f);      /* retourne 1 si la position paramètre est déjà correspondant à une position de bateau dans la flotte */
 
+
+/* Aides */
+
+/* Renvoie le bateau à la position passée en paramètre. */
+/* Renvoie un bateau vide si aucun bateau n'est sur la position (pourt l'instant)*/
+Bateau quelBateau(Position p,Flotte f);
+
 #endif

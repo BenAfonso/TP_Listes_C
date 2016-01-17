@@ -32,6 +32,14 @@ int main (void)
     printf("Player 2 needs to place his ships \n");
     placerBateau(j2);
 
+
+
+/* Affichage des flottes */
+    printf("============ JOUEUR 1 ============\n");
+    afficherBateaux(flotte(j1));
+    printf("============ JOUEUR 2 ============\n");
+    afficherBateaux(flotte(j2));
+
 /* tant que la partie n'est pas terminé -> la flotte de j1 ou j2 n'est pas vide */
 
     while((estFinie(partie))==0)

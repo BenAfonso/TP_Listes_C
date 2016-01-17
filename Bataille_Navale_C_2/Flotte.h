@@ -15,4 +15,8 @@ Flotte ajoutBateau(Flotte f, Bateau b);     /* ajoute un bateau dans la listeBat
 Flotte suppBateau(Flotte f, Bateau b);      /* supprime un bateau dans la listeBateaux si ce même bateau est coulé */
 int nbreBateaux(Flotte f);        /* retourne le nombre de bateaux de la listeBateaux */
 
+int aLaPosition(Flotte f, Position p);
+
+/* Aides */
+void afficherBateaux(Flotte f);
 #endif

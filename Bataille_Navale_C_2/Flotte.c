@@ -42,6 +42,29 @@ int estVideFlotte(Flotte f)
     }
 }
 
+int aLaPosition(Flotte f, Position p)
+{
+  int i=0;
+  int j=0;
+  int sortDeBoucle=0;
+  while (i < nbreBateaux(f) && sortDeBoucle == 0)
+  {
+    /* On parcourt les bateaux */
+    j=0;
+      while (j<taille(tableauBateaux(f)[j]))
+      {
+        if (tableauMorceaux(tableauBateaux(f)[i])[j].X != p.X && tableauMorceaux(tableauBateaux(f)[i])[j].Y != p.Y)
+        {
+          /* On sort de la boucle */
+          sortDeBoucle=1;
+        }
+        j++;
+      }
+    /* Puis les morçeaux */
+  }
+  return sortDeBoucle;
+}
+
 Flotte ajoutBateau(Flotte f, Bateau bateau)
 {
     /* Ajout dans le premier vide */
@@ -63,4 +86,17 @@ Flotte ajoutBateau(Flotte f, Bateau bateau)
         i=nbreBateaux(f);
     }
     return f;
+}
+
+void afficherBateaux(Flotte f)
+{
+  int i =0;
+  /* On parcourt un à un les bateaux */
+  while (i<nbreBateaux(f))
+  {
+      printf("===== BATEAU %d\n",i);
+      afficherMorceaux(tableauBateaux(f)[i]);
+      printf("===============\n");
+      i=i+1;
+  }
 }
