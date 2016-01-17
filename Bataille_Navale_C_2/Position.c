@@ -22,6 +22,7 @@ Position choixPosition()
     Position pos;
     pos.X = X;
     pos.Y = Y;
+    pos.Active=0;
     return pos;
 }
 
