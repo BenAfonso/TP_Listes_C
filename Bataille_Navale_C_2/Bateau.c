@@ -79,7 +79,7 @@ int estDetruit(Bateau bateau)
       cpt++;
     }
   }
-  return (cpt != 0);
+  return (cpt == 0);
 }
 
 Bateau ajoutMorceau(Bateau bateau, Position p)

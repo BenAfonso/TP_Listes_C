@@ -57,7 +57,7 @@ int estTouchee(Position p, Flotte f)
     printf("\nAVANT ==========");
     afficherMorceaux(tableauBateaux(f)[i-1]);
     suppMorceau(tableauBateaux(f)[i-1],p);
-    printf("\nAPRES ==========");
+    printf("\nAPRES==========");
     afficherMorceaux(tableauBateaux(f)[i-1]);
     return 1;
   }
@@ -74,7 +74,8 @@ int estCoulee(Position p, Flotte f)
   if (aLaPosition(f,p))
   {
     Bateau bateau=quelBateau(p,f);
-    return (taille(bateau) == 0);
+    printf("%d",taille(bateau));
+    return (estDetruit(bateau));
   }
   else
   {
@@ -147,7 +148,7 @@ Bateau quelBateau(Position p,Flotte f)
       }
       i++;
   }
-  if (sortDeBoucle == 1 && estActivePos(tableauMorceaux(tableauBateaux(f)[i-1])[j-1]))
+  if (sortDeBoucle == 1)
   {
       printf("Un bateau a été trouvé !\n");
       afficherMorceaux(tableauBateaux(f)[i-1]);
@@ -156,7 +157,8 @@ Bateau quelBateau(Position p,Flotte f)
   else
   {
       printf("Aucun bateau\n");
-      return creerBateau(0);
+      /* Creation d'un bateau factice */
+      return creerBateau(5);
   }
 }
 int estActivePos(Position p)
