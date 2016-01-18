@@ -54,12 +54,11 @@ int estTouchee(Position p, Flotte f)
   /* i == nbreBateaux ou sortDeBoucle = 1 */
   if (sortDeBoucle == 1 && estActivePos(tableauMorceaux(tableauBateaux(f)[i-1])[j]))
   {
-    /* Modification nécessaires à la mort d'un bateau */
-    Bateau BateauTouche = tableauBateaux(f)[i-1];
-    /* Désactivation de la position */
-    tableauMorceaux(tableauBateaux(f)[i-1])[j]=DesactiverPos(tableauMorceaux(tableauBateaux(f)[i-1])[j]);
-    /* Décrémentation de la taille */
-    tableauBateaux(f)[i-1]=redimensionner(BateauTouche,taille(BateauTouche)-1);
+    printf("\nAVANT ==========");
+    afficherMorceaux(tableauBateaux(f)[i-1]);
+    suppMorceau(tableauBateaux(f)[i-1],p);
+    printf("\nAPRES ==========");
+    afficherMorceaux(tableauBateaux(f)[i-1]);
     return 1;
   }
 
@@ -72,26 +71,15 @@ int estTouchee(Position p, Flotte f)
 
 int estCoulee(Position p, Flotte f)
 {
-    if (estTouchee(p,f))
-    {
-        Bateau bateau=quelBateau(p,f);
-        if (taille(bateau) == 0)
-        {
-          /* Le bateau n'a plus que 1 case */
-          return 1;
-        }
-        else
-        {
-          return 0;
-        }
-    }
-    else
-    {
-        /* Le bateau n'est même pas touché ! */
-        return 0;
-    }
-
-  /* retourne 1 si la position paramètre correspond à la position d'un bateau dans la flotte en paramètre, 0 sinon */
+  if (aLaPosition(f,p))
+  {
+    Bateau bateau=quelBateau(p,f);
+    return (taille(bateau) == 0);
+  }
+  else
+  {
+    return 0;
+  }
 
 }
 /* retourne 1 si la position paramètre correspond au dernier morceau du bateau au préalablement touché,0 sinon, NECESSITE estTouchee(Position, Flotte)==1 */

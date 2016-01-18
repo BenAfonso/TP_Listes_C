@@ -18,8 +18,12 @@ Bateau ajoutMorceau(Bateau b,Position p);  /* ajoute une position dans la listeM
 Bateau set_EstPlace(Bateau b);
 int get_EstPlace(Bateau b);
 
+/* AJOUTS */
+int estDetruit(Bateau b);
 int taille(Bateau b);
 Bateau redimensionner(Bateau b, int taille);
+
+
 
 /* Aides */
 void afficherMorceaux(Bateau b);

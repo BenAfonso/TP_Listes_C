@@ -48,23 +48,38 @@ Position* tableauMorceaux(Bateau bateau)
     return bateau.tableauMorceaux;
 }
 
-
+/* Précondition: p appartient à bateau */
 Bateau suppMorceau(Bateau bateau, Position p)
 {
-  int i = 0;
-  while ((i < taille(bateau)))
-  {
-    i++;
-  }
-  if (i != taille(bateau))
-  {
-    while (i < taille(bateau))
+    int i=0;
+    int sortDeBoucle=0;
+    while(i<taille(bateau) && sortDeBoucle==0)
     {
-      bateau.tableauMorceaux[i] = bateau.tableauMorceaux[i+1];
+      if(tableauMorceaux(bateau)[i].X==p.X && tableauMorceaux(bateau)[i].Y==p.Y)
+      {
+
+        /* On desactive la position */
+        tableauMorceaux(bateau)[i]=DesactiverPos(tableauMorceaux(bateau)[i]);
+        bateau=redimensionner(bateau,taille(bateau)-1);
+        sortDeBoucle=1;
+      }
+      i++;
+    }
+
+    return bateau;
+}
+
+int estDetruit(Bateau bateau)
+{
+  int cpt=0;
+  for(int i=0;i<taille(bateau);i++)
+  {
+    if (estActivePos(tableauMorceaux(bateau)[i]))
+    {
+      cpt++;
     }
   }
-  bateau=redimensionner(bateau,taille(bateau)-1);
-  return bateau;
+  return (cpt != 0);
 }
 
 Bateau ajoutMorceau(Bateau bateau, Position p)
@@ -98,7 +113,11 @@ void afficherMorceaux(Bateau bateau)
   /* On parcourt chaque morçeau un à un */
   while (i<taille(bateau))
   {
-    printf("(%d,%d)\n",tableauMorceaux(bateau)[i].X,tableauMorceaux(bateau)[i].Y);
+    if (estActivePos(tableauMorceaux(bateau)[i]))
+    {
+        printf("(%d,%d)\n",tableauMorceaux(bateau)[i].X,tableauMorceaux(bateau)[i].Y);
+    }
+
     i++;
   }
 }
