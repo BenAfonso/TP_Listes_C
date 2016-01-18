@@ -35,6 +35,8 @@ Joueur placerBateau(Joueur J)
       sortDeBoucle=0;
       Bateau BateauCourant = tableauBateaux(flotte(J))[i];
 
+      printf("\n[Placement] Bateau %d taille: %d\n",(i+1),taille(BateauCourant));
+
       j=0;
       /* Prompt de position */
       Position pos1 = choixPosition();
@@ -55,10 +57,10 @@ Joueur placerBateau(Joueur J)
          /* Ajouts positions dans la liste des morçeaux */
          if (!(aLaPosition(flotte(J),pos1)))
          {
-           printf("\n[Placement] Bateau %d, Morceau %d\n",i,j);
+           /*printf("\n[Placement] Bateau %d, Morceau %d\n",i,j);*/
            /* CAS D'ERREURS ? */
            BateauCourant=ajoutMorceau(BateauCourant,pos1);
-           printf("[Info] Le bateau %d, Morceau %d a bien été placé\n",i,j);
+           /*printf("[Info] Le bateau %d, Morceau %d a bien été placé\n",i,j);*/
 
            if (D == 0){
              pos1.X = pos1.X+1;
@@ -82,5 +84,4 @@ Joueur placerBateau(Joueur J)
       i=i+1;
     }
     return J;
-    /* A faire plus tard */
 }

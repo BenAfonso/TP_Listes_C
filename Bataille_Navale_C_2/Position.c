@@ -82,7 +82,6 @@ int estCoulee(Position p, Flotte f)
     /* j == taille(b) ou les positions coïcident avec le morçeau j du ième bateau */
     if (j <= taille(b))
     {
-      printf("\nBateau touché\n");
       sortDeBoucle = 1;
     }
     i++;
@@ -168,7 +167,6 @@ Bateau quelBateau(Position p,Flotte f)
   }
   if (sortDeBoucle == 1)
   {
-      afficherMorceaux(tableauBateaux(f)[i-1]);
       return tableauBateaux(f)[i-1];
   }
   else
