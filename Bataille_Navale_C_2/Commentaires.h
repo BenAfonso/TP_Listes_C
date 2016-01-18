@@ -61,3 +61,6 @@ Partie tirer(Partie p );               /* demande de rentrer uneosition au joueu
 
 /* Il manquait la possibilité de créer une Position sans avoir à la saisir (Dû au mélange interface/classes métier) ce qui empêcher de respecter la spé initial qui était de créer les morceaux automatiquement */
 Position creerPosition();
+
+/* On a rajouté un identifiant pour le joueur (Entier) afin de pouvoir le différencier d'un autre joueur */
+Joueur creerJoueur();
