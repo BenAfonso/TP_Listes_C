@@ -30,9 +30,22 @@ int nbreBateaux(Flotte f)
 {
   return f.nbreBateaux;
 }
+
+int nbreBateauxActifs(Flotte f)
+{
+  int cpt=0;
+  for (int i=0;i<nbreBateaux(f);i++)
+  {
+    if (!(estDetruit(tableauBateaux(f)[i])))
+    {
+      cpt++;
+    }
+  }
+  return cpt;
+}
 int estVideFlotte(Flotte f)
 {
-    if (nbreBateaux(f) == 0)
+    if (nbreBateauxActifs(f) == 0)
     {
         return 1;
     }
@@ -78,7 +91,7 @@ Flotte ajoutBateau(Flotte f, Bateau bateau)
     /* Quand on sort, soit le bateau i n'est pas placé, soit i = nombrebateaux */
     if (i == nbreBateaux(f))
     {
-        printf("Aucun bateau non placé !");
+        printf("\nERREUR Aucun bateau non placé !");
     }
     /* On est sur le premier bateau non placé */
     else
@@ -88,6 +101,14 @@ Flotte ajoutBateau(Flotte f, Bateau bateau)
     }
     return f;
 }
+
+Flotte suppBateau(Flotte f,Bateau b)
+{
+  b.estPlace = 0;
+  /*f.nbreBateaux = f.nbreBateaux - 1;*/
+  return f;
+}
+
 
 void afficherBateaux(Flotte f)
 {

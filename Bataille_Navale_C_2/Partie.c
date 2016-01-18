@@ -61,15 +61,18 @@ Partie tirer(Partie partie)
     Position PosTir=choixPosition();
     if (estValide(PosTir))
     {
-        printf("Bon. Au moins elle est valide.\n");
         if (estVue(PosTir,flotte(joueurInactif(partie)))==1){
             if(estTouchee(PosTir,flotte(joueurInactif(partie)))==1){
                 if(estCoulee(PosTir,flotte(joueurInactif(partie)))==1){
+                     partie.joueurInactif.flotte=suppBateau(flotte(joueurInactif(partie)),quelBateau(PosTir,flotte(joueurInactif(partie))));
+                     /* Prov */
                      printf("\nCoulé !");
                 }
                 else
                 {
                   printf("\nTouché !");
+
+                  /* On desactive le position de tir */
                   PosTir=DesactiverPos(PosTir);
 
                   /* Faire les modifications nécessaires sur le bateau touché */
@@ -83,7 +86,6 @@ Partie tirer(Partie partie)
         else {
             printf("\nRaté !");
         }
-          /* Faire les modifications sur le bateau coulé */
     }
     else
     {

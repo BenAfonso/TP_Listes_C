@@ -39,7 +39,6 @@ int estTouchee(Position p, Flotte f)
     j=0;
     while (j <= taille(b) && (!(tableauMorceaux(b)[j].X == p.X && tableauMorceaux(b)[j].Y == p.Y)))
     {
-        printf("\nCoordonnées position: %d %d\n",tableauMorceaux(b)[j].X,tableauMorceaux(b)[j].Y);
         j++;
     }
     /* j == taille(b) ou les positions coïcident avec le morçeau j du ième bateau */
@@ -54,11 +53,9 @@ int estTouchee(Position p, Flotte f)
   /* i == nbreBateaux ou sortDeBoucle = 1 */
   if (sortDeBoucle == 1 && estActivePos(tableauMorceaux(tableauBateaux(f)[i-1])[j]))
   {
-    printf("\nAVANT ==========");
-    afficherMorceaux(tableauBateaux(f)[i-1]);
-    suppMorceau(tableauBateaux(f)[i-1],p);
-    printf("\nAPRES==========");
-    afficherMorceaux(tableauBateaux(f)[i-1]);
+    /* On supprime le morçeau touché ! */
+    tableauBateaux(f)[i-1]=suppMorceau(tableauBateaux(f)[i-1],p);
+    /* On signal qu'on a touché */
     return 1;
   }
 
@@ -71,12 +68,33 @@ int estTouchee(Position p, Flotte f)
 
 int estCoulee(Position p, Flotte f)
 {
-  if (aLaPosition(f,p))
+  int i = 0;
+  int j = 0;
+  int sortDeBoucle = 0;
+  while (i < nbreBateaux(f) && sortDeBoucle == 0 )
   {
-    Bateau bateau=quelBateau(p,f);
-    printf("%d",taille(bateau));
-    return (estDetruit(bateau));
+    Bateau b = tableauBateaux(f)[i];
+    j=0;
+    while (j <= taille(b) && (!(tableauMorceaux(b)[j].X == p.X && tableauMorceaux(b)[j].Y == p.Y)))
+    {
+        j++;
+    }
+    /* j == taille(b) ou les positions coïcident avec le morçeau j du ième bateau */
+    if (j <= taille(b))
+    {
+      printf("\nBateau touché\n");
+      sortDeBoucle = 1;
+    }
+    i++;
+
   }
+  /* i == nbreBateaux ou sortDeBoucle = 1 */
+  if (sortDeBoucle == 1)
+  {
+    /* On supprime le morçeau touché ! */
+    return estDetruit(tableauBateaux(f)[i-1]);
+  }
+
   else
   {
     return 0;
@@ -135,7 +153,7 @@ Bateau quelBateau(Position p,Flotte f)
   int i=0;
   int j=0;
   int sortDeBoucle=0;
-  while (i<nbreBateaux(f) && sortDeBoucle==0)
+  while (i<=nbreBateaux(f) && sortDeBoucle==0)
   {
       j=0;
       while (j<=taille(tableauBateaux(f)[i]) && sortDeBoucle == 0)
@@ -150,7 +168,6 @@ Bateau quelBateau(Position p,Flotte f)
   }
   if (sortDeBoucle == 1)
   {
-      printf("Un bateau a été trouvé !\n");
       afficherMorceaux(tableauBateaux(f)[i-1]);
       return tableauBateaux(f)[i-1];
   }
@@ -166,6 +183,7 @@ int estActivePos(Position p)
     return p.Active;
 }
 
+/* Activer une position lorsqu'un morçeau de bateau en vie se trouve dessus */
 Position ActiverPos(Position p)
 {
     p.Active = 1;

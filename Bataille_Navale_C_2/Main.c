@@ -24,21 +24,17 @@ int main (void)
 
 
 /* demande à j1 de placer ses bateaux */
-    printf("Player 1 needs to place his ships \n");
+    printf("\nPlayer 1 needs to place his ships \n");
     placerBateau(j1);
 
 
 /* demande à j2 de placer ses bateaux */
-    printf("Player 2 needs to place his ships \n");
+    printf("\nPlayer 2 needs to place his ships \n");
     placerBateau(j2);
 
 
 
-/* Affichage des flottes */
-    printf("============ JOUEUR 1 ============\n");
-    afficherBateaux(flotte(j1));
-    printf("============ JOUEUR 2 ============\n");
-    afficherBateaux(flotte(j2));
+
 
 /* tant que la partie n'est pas terminé -> la flotte de j1 ou j2 n'est pas vide */
 
@@ -46,11 +42,11 @@ int main (void)
     {
         if (quelNumero(joueurActif(partie)) == 1)
         {
-          printf("Joueur 1: \n");
+          printf("\nJoueur 1: \n");
         }
         else
         {
-          printf("Joueur 2: \n");
+          printf("\nJoueur 2: \n");
         }
         partie = tirer(partie);
         partie = changerJoueurActif(partie);
@@ -61,11 +57,11 @@ int main (void)
 /* si la flotte de j1 est vide */
 
     if (estVideFlotte(flotte(j1)) == 1) {
-        printf("GAME OVER! Player 2 is the winner.");
+        printf("\nGAME OVER! Player 2 is the winner.");
     }
     else
     {
-        printf("GAME OVER! Player 1 is the winner.");
+        printf("\nGAME OVER! Player 1 is the winner.");
     }
 
     return 0;

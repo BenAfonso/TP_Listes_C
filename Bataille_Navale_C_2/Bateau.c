@@ -53,22 +53,22 @@ Bateau suppMorceau(Bateau bateau, Position p)
 {
     int i=0;
     int sortDeBoucle=0;
-    while(i<taille(bateau) && sortDeBoucle==0)
+    while(i<=taille(bateau) && sortDeBoucle==0)
     {
       if(tableauMorceaux(bateau)[i].X==p.X && tableauMorceaux(bateau)[i].Y==p.Y)
       {
 
         /* On desactive la position */
         tableauMorceaux(bateau)[i]=DesactiverPos(tableauMorceaux(bateau)[i]);
-        bateau=redimensionner(bateau,taille(bateau)-1);
+        /*bateau=redimensionner(bateau,taille(bateau)-1);*/
         sortDeBoucle=1;
       }
       i++;
     }
-
     return bateau;
 }
 
+/* Renvoie 1 si le bateau passé en paramètre ne possède plus de morçeaux intacts */
 int estDetruit(Bateau bateau)
 {
   int cpt=0;
@@ -82,6 +82,7 @@ int estDetruit(Bateau bateau)
   return (cpt == 0);
 }
 
+/* Ajoute un morçeau au bateau */
 Bateau ajoutMorceau(Bateau bateau, Position p)
 {
     int i = 0;
@@ -100,8 +101,6 @@ Bateau ajoutMorceau(Bateau bateau, Position p)
       printf("\nAjout d'un morçeau.");
       p=ActiverPos(p);
       tableauMorceaux(bateau)[i] = p;
-      printf("\n%d %d ETAT %d\n",tableauMorceaux(bateau)[i].X,tableauMorceaux(bateau)[i].Y, estActivePos(tableauMorceaux(bateau)[i]));
-      afficherMorceaux(bateau);
     }
     return bateau;
 
@@ -113,10 +112,8 @@ void afficherMorceaux(Bateau bateau)
   /* On parcourt chaque morçeau un à un */
   while (i<taille(bateau))
   {
-    if (estActivePos(tableauMorceaux(bateau)[i]))
-    {
-        printf("(%d,%d)\n",tableauMorceaux(bateau)[i].X,tableauMorceaux(bateau)[i].Y);
-    }
+        printf("(%d,%d)  ETAT %d\n",tableauMorceaux(bateau)[i].X,tableauMorceaux(bateau)[i].Y, estActivePos(tableauMorceaux(bateau)[i]));
+
 
     i++;
   }

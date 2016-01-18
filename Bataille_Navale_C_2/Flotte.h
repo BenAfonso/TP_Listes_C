@@ -17,6 +17,7 @@ int nbreBateaux(Flotte f);        /* retourne le nombre de bateaux de la listeBa
 
 int aLaPosition(Flotte f, Position p);
 
+int nbreBateauxActifs(Flotte f);
 /* Aides */
 void afficherBateaux(Flotte f);
 #endif
